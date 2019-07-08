@@ -1,0 +1,104 @@
+* Myth/Story Structures
+** Fundamentals of Story Structure
+https://writingcooperative.com/fundamentals-of-story-structure-e199f131a891
+*** Act 1
+**** _Inciting Incident_
+***** Protagonist's regular life interrupted
+***** Kicks off series of events leading to climax
+***** Presents a challenge, leading protagonist to create a goal
+***** Protagonist is trying to achieve this goal for the rest of the story
+**** _Turning Point 1_
+***** Protagonist decides to go on the adventure
+***** Conscious decision to pursue further
+*** Act 2
+**** Escalating series of events during struggle to accomplish goal
+**** _Mid Point_
+***** Protagonist realizes that they cannot turn back
+***** Continuing now easier than giving up
+**** _Turning Point 2_
+***** Culmination of second act
+***** Protagonist is (temporarily) defeated
+***** Outlook is bleak
+*** Act 3
+**** Climax
+***** Protagonist's final battle
+***** Twist that enables protagonist to win or overcome previous mistakes
+***** Results in protagonist fulfilling goal created by the inciting incident
+**** Resolution
+** Eight-Point Arc
+https://www.dailywritingtips.com/how-to-structure-a-story-the-eight-point-arc/
+*** 1. Stasis
+**** Every-day life; routine
+*** 2. Trigger
+**** Event that sparks the story
+**** Beyond the control of the protagonist
+*** 3. Quest
+**** Result of the trigger
+**** Creates protagonist's goal to fix whatever went wrong in the trigger
+*** 4. Surprise
+**** Obstacles, complications, and conflict for protagonist
+**** The protagonist is growing and learning
+*** 5. Critical Choice
+**** Reveals the character of the protagonist
+**** Actual choice, not accidental
+*** 6. Climax
+**** Result of the critical choice
+**** Highest tension in story
+*** 7. Reversal
+**** Consequence of the climax (and therefore also critical choice)
+**** Should result in a change of the protagonist
+*** 8. Resolution
+**** The new stasis
+**** A new routine life
+**** Wiser characters; goal laid out in quest achieved
+* My talk in the myth structure
+** Stasis
+*** Rust day job
+*** Pottery as artistic escape hatch
+** Inciting Incident / Trigger
+*** Pottery going bad; no undo :(
+*** can I think of a particular piece exploding in the kiln?
+** Turning Point 1 / Quest
+*** Decision to make generative plotter art with Rust
+*** Buy an axidraw
+** Mid Point
+*** how to use a pen plotter?
+**** SVG
+**** saxi
+*** what is generative art?
+**** similarities with pottery
+***** emergent effects
+***** infinitely deep
+*** First crystal
+**** how it is made
+** Turning Point 2 / Surprise
+*** Iteration / feedback loop still really slow
+*** Tooling based on @bendotK's post
+**** TODO: find it and link it
+*** <insert sample/analysis of commits>
+** Climax
+*** Need to build `fart serve` and `fart::user_const!`
+*** Tide
+** Reversal
+*** I am now more productive
+**** More crystals
+***** Made in fraction of the time of others
+**** More other pieces
+***** polygons-in-contact -> disarray
+***** Line fields?
+** Resolution
+*** No longer limited by feedback loop and turnaround times
+*** Focusing on art rather than methods
+*** Art and math intertwined
+*** Find quote about "is there enough art? only you would make your art, so it is worth it" thing
+**** I think by Niel Gaiman?!
+* More of inspiration for different pieces rather than excruciating details of algorithm
+** looking at nature, microscopy, etc
+* Similarities / metaphors between pottery and generative art / pen plotters
+** infinitely deep
+** process based
+** using a kick wheel rather than a motorized wheel; using old pen plotters rather than new ones
+** emergent behavior in generative art; emergent patterns in glaze combinations / overlaps
+** do the same thing twice, get two similar yet different outcomes
+*** rng seeds
+*** small differences in clay / temperature / whatever
