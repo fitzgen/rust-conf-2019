@@ -102,3 +102,43 @@ https://www.dailywritingtips.com/how-to-structure-a-story-the-eight-point-arc/
 ** do the same thing twice, get two similar yet different outcomes
 *** rng seeds
 *** small differences in clay / temperature / whatever
+* Random articles that may have good resources / definitions
+** https://www.artnome.com/news/2018/8/8/why-love-generative-art
+* Task list:
+** DONE make a bunch of art with pen plotter!
+** TODO make outline of talk/slides
+** TODO actually make polished slides
+* Outline
+** Draft 1
+*** Flatulence, Crystals, and Happy Little Accidents
+Nick Fitzgerald
+RustConf 2019
+**** hi
+**** thanks for coming to my talk about algorithmic art and Rust
+**** back up first
+*** Rust and WebAssembly Working Group
+**** make fast things
+**** make robust things
+**** make good developer experiences, and support many use cases, and help others make fast and robust things
+**** these are good things!
+**** hopefully also valuable things: enough that it pays my bills at least
+**** they're even interesting and fun things!
+**** but sometimes it feels like a lot of serious business
+**** not a well-rounded life
+*** Pottery
+**** took up pottery as a hobby
+**** aiming to bring some art into my life
+*** Pottery Process
+Wedge -> Throw -> Biscuit Fire -> Glaze -> Glaze Fire
+**** wedge
+***** like kneading bread, but opposite goal: remove air bubbles rather than introduce oxygen
+**** throw
+***** put clay on the pottery wheel
+***** wheel spins, you shape the clay into a bowl/mug
+**** biscuit fire
+***** first time the pottery goes into the kiln
+***** makes the piece hard, hold its shape
+***** becomes porous for absorbing glaze
+**** glaze
+***** apply the "paint" to the piece
+***** actually is glass
