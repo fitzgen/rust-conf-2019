@@ -141,4 +141,61 @@ Wedge -> Throw -> Biscuit Fire -> Glaze -> Glaze Fire
 ***** becomes porous for absorbing glaze
 **** glaze
 ***** apply the "paint" to the piece
-***** actually is glass
+***** kind of chalky at this stage
+***** color is kind of dull
+**** glaze fire
+***** finishes the piece
+***** melts the glaze
+***** glaze becomes glassy
+***** glaze gets colorful
+**** what I really liked about pottery
+***** TODO
+**** if only result of this talk is rust programmers getting into pottery, then I'm happy
+**** but: I'm _really_ used to version control and undo
+***** pottery requires patience and accepting the need to start over from scratch
+***** things can break every step of the way
+***** wedging:
+****** didn't get all air bubbles out -> piece will _explode_ in the kiln later
+***** throwing:
+****** twitch a finger / stop paying attention / do _anything_ wrong -> have to start over
+**** one time in particular
+***** I got so frustrated that I threw away a piece that I actually could have saved
+***** just to spite myself b/c I was angry with myself
+***** I effectively threw a mini tantrum
+**** reality check:
+***** why am I doing a hobby "for fun" that is bringing out some of the worst of me?
+*** Algorithmic Art
+**** seen "Generative Art" and "Algorithmic Art" and "Creative Coding" around
+**** has many of the same things that I like about pottery
+***** TODO
+**** but it never quite grabbed me so tightly that I was overcome by the urge to produce it myself
+**** there was still something missing:
+***** nothing to hold onto; nothing physical
+*** Pen Plotters
+**** and then I discovered pen plotters
+**** a pen plotter is a robot
+***** you put a pen in its hand
+***** and then you tell it to draw something
+***** and it draws it
+***** now you have a physical, pen and paper artifact of your algorithm!!
+**** this physicality has so many awesome/unexpected/surprising/emergent twists and facets
+***** use different pens and they draw different lines
+****** color
+****** width
+****** fountain pens
+****** markers
+***** ink bleeds
+****** move pen faster -> less bleeding
+****** move pen slower -> more bleeding
+***** colors combine
+****** draw a blue line on top of a yellow one -> get a green that you don't even have a marker for
+****** draw yellow on top of blue and it comes out different
+***** the lines retain some of the imperfections of the pen,
+****** the paper,
+****** the table shaking as you walk by
+**** _this_ is what I was missing from generative art
+***** I'm hooked
+**** so I make my decision:
+***** I'm going to make algorithmic art
+***** and I'm going to make it physical by drawing it with a pen plotter
+**** so I bought an Axidraw
