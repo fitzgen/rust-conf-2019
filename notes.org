@@ -251,16 +251,44 @@ let data = element::path::Data::new()
     .close();
 
 let path = element::Path::new()
+    .set("fill", "none")
+    .set("stroke", "black")
+    .set("stroke-width", 3)
     .set("d", data);
 
 let document = svg::Document::new()
     .set("viewBox", (0, 0, 70, 70))
     .add(path);
 
-svg::save("image.svg", &document)?;
+svg::save("triangle.svg", &document)?;
 ```
-**** TODO also show the triangle that this draws (plotted?)
-**** this example uses the `svg` crate to draw a triangle
+**** I started out using the `svg` crate
+***** gives you a nice little builder-style API for creating SVGs
+**** this example draws a triangle
+**** the _path data_ describes a sequence of strokes in the coordinate space
+***** moves the pen to `10, 10`
+***** draws a line to `60, 20`, and another line from there to `25, 60`
+***** the `close` draws a line back to the first point, `10, 10`
+**** the _path element_ describes the styles of how the strokes should be drawn
+***** these styles are ignored by the pen plotter!
+***** stroke width and color are determined by what pen we give the plotter
+***** useful to us when checking out what our generated SVG will roughly look like when plotted
+**** finally, the _document_ is the whole SVG image
+***** its _view box_ is the box in the coordinate space that we see as an image
+***** can scale the view box up and down to make elements inside it smaller or larger
+*** And here is the SVG that is generated!
+
+<svg viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10,10 L60,20 L25,60 z"
+        fill="none"
+        stroke="black"
+        stroke-width="3"/>
+</svg>
+
+TODO: triangle.svg screenshot
+
+TODO: photo of triangle.svg plotted
+
 *** Babby's First Plotted Art!
 TODO: image of rects/tiled stuff
 **** TODO description of algorithm
