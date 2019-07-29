@@ -124,10 +124,20 @@ RustConf 2019
 **** hopefully also valuable things: enough that it pays my bills at least
 **** they're even interesting and fun things!
 **** but sometimes it feels like a lot of serious business
+**** I was hacking on little crates and side projects for fun
+***** but they had this tendency of becoming work
+***** not just in the sense of being a maintainer and fielding bug reports and all that
+***** but that once I'd proven out some idea in my spare time, we folded it into work
 **** not a well-rounded life
 *** Pottery
 **** took up pottery as a hobby
+**** feeling the clay with my hands and shaping it appealed to me
 **** aiming to bring some art into my life
+**** something that isn't for other people:
+***** doesn't have stakeholders or need to support use cases
+***** doesn't have to be robust
+***** something that is just for me
+***** something that is just for fun
 *** Pottery Process
 Wedge -> Throw -> Biscuit Fire -> Glaze -> Glaze Fire
 **** wedge
@@ -149,25 +159,34 @@ Wedge -> Throw -> Biscuit Fire -> Glaze -> Glaze Fire
 ***** glaze becomes glassy
 ***** glaze gets colorful
 **** what I really liked about pottery
-***** TODO
-**** if only result of this talk is rust programmers getting into pottery, then I'm happy
-**** but: I'm _really_ used to version control and undo
-***** pottery requires patience and accepting the need to start over from scratch
+***** you can spend a lifetime exploring just one corner of the pottery process
+****** there's so much depth to it
+****** https://www.instagram.com/p/BPJEw4nhqfU/
+***** for me: glaze in particular, the whole is greater than the parts
+****** put a coat of white glaze on top of black glaze and it comes out green(!?!)
+**** discovered that if I put TODO glaze over TODO glaze, then
+***** I got something that came out metallic and shimmery,
+***** almost like an oil slick
+***** neither glaze alone had this property, but combine them and something new _emerges_
+***** tried to recreate this with 5 bowls
+***** only 1 made it through the whole process
+**** pottery is very difficult and requires lots of patience
 ***** things can break every step of the way
 ***** wedging:
 ****** didn't get all air bubbles out -> piece will _explode_ in the kiln later
 ***** throwing:
 ****** twitch a finger / stop paying attention / do _anything_ wrong -> have to start over
-**** one time in particular
-***** I got so frustrated that I threw away a piece that I actually could have saved
-***** just to spite myself b/c I was angry with myself
-***** I effectively threw a mini tantrum
-**** reality check:
-***** why am I doing a hobby "for fun" that is bringing out some of the worst of me?
+***** this difficulty is part of the craft and what makes it so impressive!
+***** realization:
+****** despite all these things about pottery that I really enjoyed,
+****** I was getting more frustrated by pottery's difficulty than I was having fun
 *** Algorithmic Art
 **** seen "Generative Art" and "Algorithmic Art" and "Creative Coding" around
+**** TODO quick description of what this is
 **** has many of the same things that I like about pottery
-***** TODO
+***** sum > parts
+****** combine glazes and get a new glaze that is completely different from original glazes
+****** simple rules combine -> create emergent behavior that is bigger than any of the rules alone
 **** but it never quite grabbed me so tightly that I was overcome by the urge to produce it myself
 **** there was still something missing:
 ***** nothing to hold onto; nothing physical
@@ -178,12 +197,14 @@ Wedge -> Throw -> Biscuit Fire -> Glaze -> Glaze Fire
 ***** and then you tell it to draw something
 ***** and it draws it
 ***** now you have a physical, pen and paper artifact of your algorithm!!
-**** this physicality has so many awesome/unexpected/surprising/emergent twists and facets
+**** in addition to an artifact that you can hold/frame/give to someone, adds more room for emergence:
+***** a pen doesn't draw perfect Euclidean lines with zero area
 ***** use different pens and they draw different lines
 ****** color
 ****** width
 ****** fountain pens
 ****** markers
+****** gel pens
 ***** ink bleeds
 ****** move pen faster -> less bleeding
 ****** move pen slower -> more bleeding
@@ -195,7 +216,57 @@ Wedge -> Throw -> Biscuit Fire -> Glaze -> Glaze Fire
 ****** the table shaking as you walk by
 **** _this_ is what I was missing from generative art
 ***** I'm hooked
-**** so I make my decision:
+**** so I made my decision:
 ***** I'm going to make algorithmic art
 ***** and I'm going to make it physical by drawing it with a pen plotter
-**** so I bought an Axidraw
+**** so I bought a pen plotter
+*** How do I use a pen plotter?
+SVG -> Pen Plotter
+**** Like most of you, probably, I didn't know how to use a pen plotter
+***** what is the process to go from zero to drawn artifact?
+**** Easiest way is to use _SVG_
+***** TODO include image from wikipedia showing raster vs vector graphics
+***** scalable vector graphics
+***** image format
+***** but instead of talking about a set of pixels, like bitmaps, jpg, or png do
+***** talks about a set of shapes and lines
+***** these shapes and lines are described within some abstract coordinate space
+***** pen plotter can scale the SVG's coordinate space to the page it's drawing on
+****** and draw these lines and shapes with the pen you give it
+**** for the Axidraw, use `saxi`
+***** nice Web frontend to control the plotter
+***** makes getting the pen up/down height and centering on the page easy
+*** How do I generate an SVG from Rust?
+Rust program -> SVG -> Pen Plotter
+**** ok, so if I want to plot my own art, I need to write a program to generate an SVG
+**** for me, there is no question that this program will be written in Rust
+*** Use the `svg` crate
+```
+use svg::node::element;
+
+let data = element::path::Data::new()
+    .move_to((10, 10))
+    .line_to((60, 20))
+    .line_to((25, 60))
+    .close();
+
+let path = element::Path::new()
+    .set("d", data);
+
+let document = svg::Document::new()
+    .set("viewBox", (0, 0, 70, 70))
+    .add(path);
+
+svg::save("image.svg", &document)?;
+```
+**** TODO also show the triangle that this draws (plotted?)
+**** this example uses the `svg` crate to draw a triangle
+*** Babby's First Plotted Art!
+TODO: image of rects/tiled stuff
+**** TODO description of algorithm
+*** What is the process really?
+Rust program -> SVG -> Pen Plotter
+     ^           |
+     |           |
+     `-----------'
+**** TODO BenDotK link
