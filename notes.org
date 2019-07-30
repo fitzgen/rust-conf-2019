@@ -277,24 +277,92 @@ svg::save("triangle.svg", &document)?;
 ***** its _view box_ is the box in the coordinate space that we see as an image
 ***** can scale the view box up and down to make elements inside it smaller or larger
 *** And here is the SVG that is generated!
-
+```
 <svg viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
   <path d="M10,10 L60,20 L25,60 z"
         fill="none"
         stroke="black"
         stroke-width="3"/>
 </svg>
+```
 
 TODO: triangle.svg screenshot
 
 TODO: photo of triangle.svg plotted
+*** Rectangles
+```
+trait Rect: Default {
+    type Node: svg::node::Node;
 
-*** Babby's First Plotted Art!
-TODO: image of rects/tiled stuff
-**** TODO description of algorithm
-*** What is the process really?
+    fn draw(
+        &mut self,
+        rng: &mut impl Rng,
+        x: f64,
+        y: f64,
+        width: f64,
+        height: f64,
+        value: f64,
+    ) -> Self::Node;
+}
+```
+**** now that I could generate SVGs, I set out an exercise for myself
+**** how many ways could I fill a rectangle?
+**** parameterized by a "darkness" value
+***** where 0 ~= white
+***** and 1 ~= black
+*** Rectangles
+Rectangle 2:
+https://raw.githubusercontent.com/fitzgen/rects/master/images/2019-01-14-01-51-39-827170000.png
+
+Rectangle 6:
+https://raw.githubusercontent.com/fitzgen/rects/master/images/2019-01-16-04-44-00-236808000.png
+
+Rectangle 8:
+https://raw.githubusercontent.com/fitzgen/rects/master/images/2019-01-18-02-55-31-641547000.png
+*** Tilings
+```
+trait Tiling {
+    fn new(rng: &mut impl Rng, width: usize, height: usize) -> Self;
+
+    fn get_value(&mut self, rng: &mut impl Rng, x: usize, y: usize) -> f64;
+}
+```
+**** next I explored ways to compose these rectangles by tiling them and varying the darkness value
+*** Tiling 0 of Rectangle 10
+https://raw.githubusercontent.com/fitzgen/rects/master/images/2019-01-19-19-02-17-359541000.png
+**** _Tiling 0_ gave each rectangle a darkness value based on its y position in the tiling
+***** the first row at the top had near-0 value, making it very light,
+***** and then as you go down to the bottom the rectangles get darker and darker,
+***** creating a gradient effect
+*** Tiling 3 of Rectangle 2
+https://raw.githubusercontent.com/fitzgen/rects/master/images/2019-01-19-21-13-40-960604000.png
+**** _Tiling 3_ assigns darkness based on how close a rectangle is to the center of the tiling
+**** but then introduces a little bit of random noise to perturb the results
+**** what I like about the piece
+***** the kaleidoscope effect
+***** almost looks like stained glass
+***** this is another example of _emergent properties_ of generative art
+****** created by the ways a rectangle's interior squares are positioned
+****** how they happen to interact with
+*** Tiling 3 of Rectangle 2; Plotted
+https://twitter.com/fitzgen/status/1088241756464865280/photo/1
+**** This was my favorite of the tiling exercise; so I decided to plot it
+**** another surprise: lines thicker -> much darker than anticipated
+**** more ghostly
+** What is the process really?
 Rust program -> SVG -> Pen Plotter
      ^           |
      |           |
      `-----------'
-**** TODO BenDotK link
+*** Actually there's a feedback loop
+**** don't write perfect programs the first time
+**** don't generate SVGs that you're happy with on the first go
+**** I'm doing a lot of
+***** edit
+***** compile
+***** run
+***** alt-tab to browser
+***** refresh
+***** alt-tab back to Emacs
+***** repeat
+*** https://www.kovach.me/posts/2018-10-13-infrastructure-of-art.html
