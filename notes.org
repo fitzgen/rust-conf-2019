@@ -108,6 +108,41 @@ https://www.dailywritingtips.com/how-to-structure-a-story-the-eight-point-arc/
 ** DONE make a bunch of art with pen plotter!
 ** TODO make outline of talk/slides
 ** TODO actually make polished slides
+* Corpus of art to entice folks with
+** https://elartedigital.files.wordpress.com/2010/04/schotter-nees.jpg
+Georg Nees
+"Schotter"
+1960s
+** https://twitter.com/paulrickards/status/1133489029515751425
+Paul Rickards
+"Entropy variation"
+2019
+** http://reas.com/p13_s/reas_p13_s_0.jpg
+Casey Reas
+"Process 13"
+2010
+*** Co-inventor of Processing
+**** Probably the most influential generative art framework in current use
+** https://img.inconvergent.net/img/plot/7448ddf.jpg
+Anders Hoff
+"7448ddf"
+2017
+** https://www.instagram.com/p/Bu879UZnuls/
+Alexi Andre
+#802
+2019
+** https://tylerxhobbs.com/#/reach/
+Tyler Hobbs
+"Reach"
+2019
+** https://www.kovach.me/art/2018-03-29-see.html
+Benjamin Kovach
+"See"
+2018
+** https://live.staticflickr.com/8376/8558953361_cdc4edf831_k.jpg
+Desmond Paul Henry
+Untitled
+1962
 * Outline
 ** Draft 1
 *** Flatulence, Crystals, and Happy Little Accidents
@@ -233,13 +268,22 @@ SVG -> Pen Plotter
 ***** these shapes and lines are described within some abstract coordinate space
 ***** pen plotter can scale the SVG's coordinate space to the page it's drawing on
 ****** and draw these lines and shapes with the pen you give it
+***** Like HTML or XML, SVG is a bunch of elements
+****** in pointy brackets
+****** with optional attributes to control width or color
+***** How many of you know HTML or XML?
+****** Raise your hands
+****** Great! Everyone who raised their hand is ready to be a artist!
 **** for the Axidraw, use `saxi`
 ***** nice Web frontend to control the plotter
 ***** makes getting the pen up/down height and centering on the page easy
+***** can't recommend it highly enough
 *** How do I generate an SVG from Rust?
 Rust program -> SVG -> Pen Plotter
 **** ok, so if I want to plot my own art, I need to write a program to generate an SVG
 **** for me, there is no question that this program will be written in Rust
+**** and this is Rust Conf, so likely its the same way for you
+**** but if you prefer JavaScript or Go, then use that!
 *** Use the `svg` crate
 ```
 use svg::node::element;
@@ -262,7 +306,7 @@ let document = svg::Document::new()
 
 svg::save("triangle.svg", &document)?;
 ```
-**** I started out using the `svg` crate
+**** I started out using just the `svg` crate directly
 ***** gives you a nice little builder-style API for creating SVGs
 **** this example draws a triangle
 **** the _path data_ describes a sequence of strokes in the coordinate space
@@ -349,6 +393,9 @@ https://twitter.com/fitzgen/status/1088241756464865280/photo/1
 **** This was my favorite of the tiling exercise; so I decided to plot it
 **** another surprise: lines thicker -> much darker than anticipated
 **** more ghostly
+** Claim: Plotters Support SVG.
+Verdict: *Mostly* True
+*** TODO talk about computational geometry
 ** What is the process really?
 Rust program -> SVG -> Pen Plotter
      ^           |
@@ -365,4 +412,7 @@ Rust program -> SVG -> Pen Plotter
 ***** refresh
 ***** alt-tab back to Emacs
 ***** repeat
-*** https://www.kovach.me/posts/2018-10-13-infrastructure-of-art.html
+*** Someone already laid out exactly how to solve this problem!
+https://www.kovach.me/posts/2018-10-13-infrastructure-of-art.html
+**** Use a file watcher -> recompile and rerun on every change
+**** Automatically commit
