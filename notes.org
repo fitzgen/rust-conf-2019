@@ -200,6 +200,7 @@ Wedge -> Throw -> Biscuit Fire -> Glaze -> Glaze Fire
 ***** for me: glaze in particular, the whole is greater than the parts
 ****** put a coat of white glaze on top of black glaze and it comes out green(!?!)
 **** discovered that if I put TODO glaze over TODO glaze, then
+***** TODO green and black?
 ***** I got something that came out metallic and shimmery,
 ***** almost like an oil slick
 ***** neither glaze alone had this property, but combine them and something new _emerges_
@@ -456,8 +457,9 @@ Verdict: *Half True*
 *** Fitzgen's Art
 **** I decided to pursue the last option
 **** started collecting comp. geom. algorithms/utilities in a collection of crates called "Fitzgen's Art"
-**** "Fitzgen's Art" was too long so I decided to shorten it to "fart"
+**** "Fitzgen's Art" was too bloated, so to release some of the pressure, it became "fart"
 ***** hence the "flatulence" part of this talk's title
+***** OK, now we have the only fart joke in the talk out of the way
 ** Crystals
 *** TODO
 ** What is the process really?
