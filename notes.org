@@ -393,9 +393,73 @@ https://twitter.com/fitzgen/status/1088241756464865280/photo/1
 **** This was my favorite of the tiling exercise; so I decided to plot it
 **** another surprise: lines thicker -> much darker than anticipated
 **** more ghostly
+*** Take Aways
+**** Constraint breeds creativity
+***** The hardest part is looking at a blank canvas and deciding what to do
+****** side step it by giving yourself constraints and an exercise
+****** and do as many things as you can within those constraints
+****** maybe even just sit down and write a list of all the things that might fit those constraints first
+****** and then start coding them afterwards
+****** potential constraints for exercises:
+******* How many ways can I fill a rectangle with some `value` of darkness?
+******* How many ways can I render some sort of brush stroke, given a path of points?
+******* How many ways can I visualize Perlin noise?
+******* How many ways can I visualize binary numbers?
+******* How many ways can I draw random walks?
+****** once you have a bunch of methods for drawing within those constraints, how can you combine them?
+******* How can I tile these rectangles and their darkness values?
+******* Which of my brush strokes look nice when rendering Perlin noise?
+******* What if I constructed a path to draw based on the intersection points of two random walks?
+**** Simple combinations of simple primitives
+Corollary: We don't need a framework to start making art
+***** It doesn't take much to start making art
+***** You don't have to learn a framework like Processing or Open Frameworks or Nannou
+***** You can start *now*!
+***** I did these first pieces with just the `svg` crate
+****** but we don't even need that
+****** could just as easily concatenate strings of SVG fragments together!
+***** I mention this because learning new frameworks can be intimidating/frustrating/slow
+****** and the best way to start making art is to hit the ground running
+****** once you have a problem that can be solved by a framework, then reach for a framework
 ** Claim: Plotters Support SVG.
-Verdict: *Mostly* True
-*** TODO talk about computational geometry
+Verdict: *Half True*
+*** https://static.politifact.com/rulings/tom-halftrue.png
+*** SVG supports filling in shapes with a color or gradient
+**** the pen plotter will only draw the outline of the shape
+**** if you want some sort of fill, you have to add hatch lines yourself, or another pattern of lines
+*** SVG elements can be assigned a Z-index
+**** like HTML and CSS: elements with a higher Z-index occlude elements lower Z-index
+***** ignoring transparency, you only see the element with the higher Z-index
+***** whether the lower Z-index element was ever rendered or not is an impl detail of the rendering engine
+****** either way we never see it
+**** on the other hand: pen plotters will draw the shape underneath, and then draw the shape on top
+***** if you didn't want to see the lower Z-index shape
+****** then you need to figure out how to do that yourself
+**** multiple ways to solve this problem, notably:
+***** use ray casting to figure out what is visible to the camera
+****** break every path down into epsilon-length line segments and check if anything occludes segment
+****** it is imprecise, but you can make epsilon smaller than the smallest line your plotter can draw
+******* so in practice it doesn't natter
+****** Applies to anything you might draw with the pen plotter
+******* since the pen plotter can really only draw lines
+***** use Computational Geometry algorithms to find precise intersection points
+****** Upside: precise answers! (If all the calculations fit in your number representation)
+******* These algorithms are capital-F Fun
+******* feels like you're one small chain link in a succession that leads all the way back to Euclid
+******** especially when you're using the `euclid` crate
+****** downside: not as generally applicable as ray casting
+******* for example: different algorithms for convex vs concave shapes
+*** This is a good time to either
+1. Reach for a library
+2. Start using a framework that does this for you
+3. Decide to go down the rabbit hole and write your own library or framework
+*** Fitzgen's Art
+**** I decided to pursue the last option
+**** started collecting comp. geom. algorithms/utilities in a collection of crates called "Fitzgen's Art"
+**** "Fitzgen's Art" was too long so I decided to shorten it to "fart"
+***** hence the "flatulence" part of this talk's title
+** Crystals
+*** TODO
 ** What is the process really?
 Rust program -> SVG -> Pen Plotter
      ^           |
@@ -403,16 +467,33 @@ Rust program -> SVG -> Pen Plotter
      `-----------'
 *** Actually there's a feedback loop
 **** don't write perfect programs the first time
-**** don't generate SVGs that you're happy with on the first go
+***** "if it compiles then it works" doesn't really apply
+I haven't found a way to encode my aesthetic taste into something that the
+borrow checker can enforce at compile time yet
 **** I'm doing a lot of
 ***** edit
 ***** compile
 ***** run
-***** alt-tab to browser
+***** alt-tab to Firefox
 ***** refresh
 ***** alt-tab back to Emacs
 ***** repeat
+**** feedback loop is not as fast as I'd like
 *** Someone already laid out exactly how to solve this problem!
 https://www.kovach.me/posts/2018-10-13-infrastructure-of-art.html
 **** Use a file watcher -> recompile and rerun on every change
-**** Automatically commit
+**** if recompiles OK && generates SVG OK then
+***** save image as `images/<timestamp>.svg`
+***** symlink as `images/latest.svg`
+***** make a git commit of everything: images and code
+This way you never lose any image you ever generate and you also have the code
+that generated the image, if you want to go back and riff on a different theme
+from what you did the first time
+*** But the this didn't solve the problem
+**** still spending a lot of time switching contexts and alt-tab'ing between Emacs and Firefox
+**** still feel like I'm _waiting_ to see what kind of effect minor changes are having on the generated SVG
+*** Analysis of 100 random `crissals` commits
+**** temp files: 35
+**** change code/algorithm: 18
+**** change constants: 38
+**** formatting: 9
