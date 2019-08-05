@@ -145,13 +145,13 @@ Untitled
 1962
 * Outline
 ** Draft 1
-*** Flatulence, Crystals, and Happy Little Accidents
+*** Flatulence, Crystals, and Happy Little Accidents [30 seconds]
 Nick Fitzgerald
 RustConf 2019
 **** hi
 **** thanks for coming to my talk about algorithmic art and Rust
 **** back up first
-*** Rust and WebAssembly Working Group
+*** Rust and WebAssembly Working Group [2 minutes]
 **** make fast things
 **** make robust things
 **** make good developer experiences, and support many use cases, and help others make fast and robust things
@@ -164,7 +164,7 @@ RustConf 2019
 ***** not just in the sense of being a maintainer and fielding bug reports and all that
 ***** but that once I'd proven out some idea in my spare time, we folded it into work
 **** not a well-rounded life
-*** Pottery
+*** Pottery [30 seconds]
 **** took up pottery as a hobby
 **** feeling the clay with my hands and shaping it appealed to me
 **** aiming to bring some art into my life
@@ -173,7 +173,7 @@ RustConf 2019
 ***** doesn't have to be robust
 ***** something that is just for me
 ***** something that is just for fun
-*** Pottery Process
+*** Pottery Process [2 minutes]
 Wedge -> Throw -> Biscuit Fire -> Glaze -> Glaze Fire
 **** wedge
 ***** like kneading bread, but opposite goal: remove air bubbles rather than introduce oxygen
@@ -216,7 +216,7 @@ Wedge -> Throw -> Biscuit Fire -> Glaze -> Glaze Fire
 ***** realization:
 ****** despite all these things about pottery that I really enjoyed,
 ****** I was getting more frustrated by pottery's difficulty than I was having fun
-*** Algorithmic Art
+*** Algorithmic Art [1 minute]
 **** seen "Generative Art" and "Algorithmic Art" and "Creative Coding" around
 **** TODO quick description of what this is
 **** has many of the same things that I like about pottery
@@ -226,7 +226,7 @@ Wedge -> Throw -> Biscuit Fire -> Glaze -> Glaze Fire
 **** but it never quite grabbed me so tightly that I was overcome by the urge to produce it myself
 **** there was still something missing:
 ***** nothing to hold onto; nothing physical
-*** Pen Plotters
+*** Pen Plotters [2 minutes]
 **** and then I discovered pen plotters
 **** a pen plotter is a robot
 ***** you put a pen in its hand
@@ -256,7 +256,7 @@ Wedge -> Throw -> Biscuit Fire -> Glaze -> Glaze Fire
 ***** I'm going to make algorithmic art
 ***** and I'm going to make it physical by drawing it with a pen plotter
 **** so I bought a pen plotter
-*** How do I use a pen plotter?
+*** How do I use a pen plotter? [1 minute]
 SVG -> Pen Plotter
 **** Like most of you, probably, I didn't know how to use a pen plotter
 ***** what is the process to go from zero to drawn artifact?
@@ -279,13 +279,13 @@ SVG -> Pen Plotter
 ***** nice Web frontend to control the plotter
 ***** makes getting the pen up/down height and centering on the page easy
 ***** can't recommend it highly enough
-*** How do I generate an SVG from Rust?
+*** How do I generate an SVG from Rust? [30 seconds]
 Rust program -> SVG -> Pen Plotter
 **** ok, so if I want to plot my own art, I need to write a program to generate an SVG
 **** for me, there is no question that this program will be written in Rust
 **** and this is Rust Conf, so likely its the same way for you
 **** but if you prefer JavaScript or Go, then use that!
-*** Use the `svg` crate
+*** Use the `svg` crate [1 minute]
 ```
 use svg::node::element;
 
@@ -321,7 +321,7 @@ svg::save("triangle.svg", &document)?;
 **** finally, the _document_ is the whole SVG image
 ***** its _view box_ is the box in the coordinate space that we see as an image
 ***** can scale the view box up and down to make elements inside it smaller or larger
-*** And here is the SVG that is generated!
+*** And here is the SVG that is generated! [30 seconds]
 ```
 <svg viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
   <path d="M10,10 L60,20 L25,60 z"
@@ -336,9 +336,7 @@ TODO: triangle.svg screenshot
 TODO: photo of triangle.svg plotted
 *** Rectangles
 ```
-trait Rect: Default {
-    type Node: svg::node::Node;
-
+trait Rect {
     fn draw(
         &mut self,
         rng: &mut impl Rng,
@@ -347,7 +345,7 @@ trait Rect: Default {
         width: f64,
         height: f64,
         value: f64,
-    ) -> Self::Node;
+    ) -> svg::node::element::path::Data;
 }
 ```
 **** now that I could generate SVGs, I set out an exercise for myself
@@ -461,6 +459,10 @@ Verdict: *Half True*
 ***** hence the "flatulence" part of this talk's title
 ***** OK, now we have the only fart joke in the talk out of the way
 ** Crystals
+*** https://mobile.twitter.com/CRoullardArt/status/1104782729017585664
+carol-roullard-aspirin-2019.png
+*** https://mobile.twitter.com/micROCKScopica/status/1142428535036006401
+micROCKScopica-charoite-2018.jpg
 *** TODO
 ** What is the process really?
 Rust program -> SVG -> Pen Plotter

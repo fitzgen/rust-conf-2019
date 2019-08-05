@@ -1,0 +1,17 @@
+{
+  "name": "hello-wasm-bindgen",
+  "version": "1.0.0",
+  "description": "a presentation introducing wasm-bindgen",
+  "main": "index.js",
+  "scripts": {
+    "start": "simple-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rustwasm/hello-wasm-bindgen.git"
+  },
+  "homepage": "https://rustwasm.github.io/hello-wasm-bindgen",
+  "dependencies": {
+    "simple-server": "^1.1.1"
+  }
+}

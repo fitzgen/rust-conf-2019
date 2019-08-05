@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flatulence, Crystals, and Happy Little Accidents | Rust Conf 2019</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+     @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+     @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+     @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+     body {
+         font-family: 'Droid Serif', 'Times New Roman', 'serif';
+     }
+
+     h1, h2, h3, h4, h5, h6 {
+         font-family: 'Yanone Kaffeesatz', 'Helvetica', 'sans-serif';
+         font-weight: normal;
+     }
+
+     .remark-container, .remark-slide-content {
+         background-color: hsl(0, 0%, 12.5%);
+         color: hsl(0, 0%, 87.5%);
+     }
+
+     .hljs-zenburn, .hljs {
+         background-color: hsl(0, 0%, 12.5%) !important;
+     }
+
+     .remark-slide-scaler {
+         -webkit-box-shadow: none;
+         -moz-box-shadow: none;
+         box-shadow: none;
+     }
+
+     .remark-container a {
+         color: hsl(340, 100%, 75%);
+     }
+
+     .remark-code, .remark-inline-code {
+         font-family: 'Ubuntu Mono', 'monospace';
+     }
+
+     .footnote {
+         font-size: 0.8em;
+         bottom:12px;
+         position:absolute;
+         left:20px;
+         opacity: 0.75;
+     }
+
+     .remark-slide-number {
+         font-size: 0.8em;
+         opacity: 0.75;
+     }
+
+     big {
+         font-size: 1.6em;
+     }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+    </textarea>
+    <script src="remark.js" type="text/javascript"></script>
+    <script type="text/javascript">
+     async function main() {
+         const slides = await fetch("./slides.md");
+         const slidesText = await slides.text();
+         document.getElementById("source").textContent = slidesText;
+         window.slideshow = remark.create({
+             highlightLanguage: "rust",
+             highlightStyle: "zenburn",
+         });
+     }
+     main();
+    </script>
+  </body>
+</html>
