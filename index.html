@@ -8,6 +8,17 @@
      @import url(https://fonts.googleapis.com/css?family=Roboto);
      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
+     :root {
+         --bg-black: hsl(240, 5%, 12.5%);
+
+         --fg-white: hsl(0, 0%, 85%);
+         --fg-pink: hsl(320, 100%, 85%);
+         --fg-blue: hsl(190, 90%, 85%);
+         --fg-green: hsl(150, 90%, 85%);
+         --fg-purple: hsl(290, 90%, 85%);
+         --fg-yellow: hsl(60, 90%, 85%);
+     }
+
      body {
          font-family: 'Roboto', 'Times New Roman', 'serif';
      }
@@ -23,12 +34,12 @@
      }
 
      .remark-container, .remark-slide-content {
-         background-color: hsl(0, 0%, 12.5%);
-         color: hsl(0, 0%, 87.5%);
+         background-color: var(--bg-black);
+         color: var(--fg-white);
      }
 
      .hljs-zenburn, .hljs {
-         background-color: hsl(0, 0%, 12.5%) !important;
+         background-color: var(--bg-black) !important;
      }
 
      .remark-slide-scaler {
@@ -38,7 +49,7 @@
      }
 
      .remark-container a {
-         color: hsl(340, 90%, 85%);
+         color: var(--fg-pink);
      }
 
      .remark-code, .remark-inline-code {
@@ -81,7 +92,7 @@
      }
 
      big {
-         font-size: 1.5em;
+         font-size: 1.1em;
      }
 
      .hbox, .vbox {
@@ -114,8 +125,28 @@
          max-width: 50%;
      }
 
-     .invert-80 {
-         filter: invert(80%);
+     .invert-90 {
+         filter: invert(90%);
+     }
+
+     .remark-code {
+         font-size: 1.4em;
+     }
+
+     .blue {
+         color: var(--fg-blue);
+     }
+
+     .green {
+         color: var(--fg-green);
+     }
+
+     .purple {
+         color: var(--fg-purple);
+     }
+
+     .yellow {
+         color: var(--fg-yellow);
      }
     </style>
   </head>

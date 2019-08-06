@@ -11,12 +11,9 @@ class: left, middle
 
 ---
 
-class: middle, center
+# .purple[<big>Flatulence, <br/> Crystals, <br/> and Happy Little Accidents</big>]
 
-# <big>Flatulence, Crystals, and Happy Little Accidents</big>
-<br/>
-### Nick Fitzgerald
-### [@fitzgen](https://twitter.com/fitzgen)
+### .green[Nick Fitzgerald] <br/> [@fitzgen](https://twitter.com/fitzgen)
 
 ???
 
@@ -135,7 +132,7 @@ class: center, middle
 
 ---
 
-<video autoplay loop class="centermiddle">
+<video autoplay loop class="centermiddle" alt="The AxiDraw pen plotter drawing the Rust logo">
   <source src="images/axidraw-rust-5x-transposed.webm"/>
   <p>Video not supported.</p>
 </video>
@@ -182,17 +179,36 @@ class: center, middle
 
 ---
 
-# How do I use a pen plotter?
+class: middle,center
+
+# .yellow[How do I use a pen plotter?]
+
+???
+
+* at this point I have a lot more excitement than knowledge
+* how do I get my new pen plotter to draw something?
 
 ---
 
-<img class="centermiddle invert-80" src="images/bitmap-vs-svg.svg" />
+<img class="centermiddle invert-90" src="images/bitmap-vs-svg.svg" />
 
 .headnote[Source: [Wikipedia](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics#/media/File:Bitmap_VS_SVG.svg)]
 
 ???
 
-* TODO
+* the easiest way is to use SVG
+* SVG stands for Scalable Vector Graphics
+* "Vector" means that instead of talking about pixels, like jpeg and PNG do, we
+  have shapes and paths
+* the shapes and paths are described within some abstract coordinate space
+* and the pen plotter can _scale_ the SVG's coordinate space up or down to the
+  size of the paper that it's drawing on
+    * and draw these shapes and paths with the pen you give
+* How many of you know HTML or XML?
+    * raise your hands -- great!
+    * just like HTML and XML, SVG is a text format with a bunch of elements in
+      pointy brackets
+    * So everyone who just raised their hand is ready to be a plotter artist :)
 
 ---
 
@@ -222,12 +238,14 @@ svg::save("triangle.svg", &document)?;
 
 ???
 
+* but I don't want to plot any old SVG
+    * I want to programmatically generate my own SVGs from Rust
 * the `svg` crate gives us a nice builder-style API for creating SVGs
-* and we can get surprisingly far using just this crate
+    * and we can get surprisingly far using just this crate
 * this example draws a triangle
-* the _path data_ describes a sequence of strokes in the coordinate space
-* the _path element_ describes the styles of how the strokes should be drawn
-* finally, the _document_ is the whole SVG image and its view box
+    * the _path data_ describes a sequence of strokes in the coordinate space
+    * the _path element_ describes the styles of how the strokes should be drawn
+    * finally, the _document_ is the whole SVG image and its view box
 
 ---
 
@@ -237,7 +255,7 @@ svg::save("triangle.svg", &document)?;
 
 ???
 
-* to get the SVG to the Axidraw, use `saxi`
+* to get an SVG to the AxiDraw, which is the pen plotter that I have, use `saxi`
     * nice Web frontend to control the plotter
     * makes calibrating the pen's up and down height and centering on the page easy
     * can't recommend it highly enough
@@ -260,7 +278,16 @@ svg::save("triangle.svg", &document)?;
 
 ???
 
-* TODO
+* ok here is the result!
+* on the top, we have the generated SVG source text for `triangle.svg`
+    * as you can see it has a proper amount of pointy brackets
+* on the bottom left, we have a software rendering of `triangle.svg`
+* and on the bottom right, we have a photograph of `triangle.svg` drawn by a pen
+  plotter with a TODO pen/marker
+* when we generated the SVG, we said that the stroke lines would be fairly thick
+  and blue
+    * but as you can see, the pen plotter doesn't care what we said
+    * it just moves its pen according to the paths
 
 ---
 
@@ -280,31 +307,46 @@ trait Rectangle {
 
 ???
 
-* TODO
+* now that I could generate SVGs and plot them, I set an exercise for myself
+* how many ways could I fill a rectangle?
+* parameterized by a "darkness" value
+    * where 0 ~= empty
+    * and 1 ~= completely filled
 
 ---
 
-<img class="invert-80" alt="Rectangle 2" src="images/rectangle-2.png"/>
+<img class="invert-90" alt="Rectangle 2" src="images/rectangle-2.svg"/>
 
 ???
 
-* TODO
+* This is *Rectangle 2* with values 0.1, 0.5, and 0.9
+* To create rectangle 2:
+    * choose a random point within the rectangle
+    * draw boxes out from that point with uniform distances between them until
+      they fill the whole rectangle
+    * lower value -> fewer boxes
+    * higher value -> more boxes
 
 ---
 
-<img class="invert-80" alt="Rectangle 6" src="images/rectangle-6.png"/>
+<img class="invert-90" alt="Rectangle 6" src="images/rectangle-6.svg"/>
 
 ???
 
-* TODO
+* *Rectangle 6* is similar to rectangle 2
+* except we always start in the middle
+* and boxes that are closer to the middle have corners that are more rounded
+  than the corners of boxes further from the middle
 
 ---
 
-<img class="invert-80" alt="Rectangle 8" src="images/rectangle-8.png"/>
+<img class="invert-90" alt="Rectangle 8" src="images/rectangle-8.svg"/>
 
 ???
 
-* TODO
+* *Rectangle 8* chooses points some distance along each of the outer rectangle's
+  edges, and then draws lines between those points to create a new rectangle
+* and it continues recursively
 
 ---
 
@@ -312,8 +354,8 @@ trait Rectangle {
 trait Tiling {
     fn new(
         rng: &mut impl Rng,
-        width: usize,
-        height: usize,
+        columns: usize,
+        rows: usize,
     ) -> Self;
 
     fn get_value(
@@ -327,29 +369,111 @@ trait Tiling {
 
 ???
 
-* TODO
+* next, I explored ways to compose these rectangles by tiling them and varying
+  the fill value across the individual rectangles within the tiling
 
 ---
 
-<img class="invert-80 centermiddle" alt="Tiling 0 of Rectangle 10" src="images/tiling-0-rectangle-10.png"/>
+<img class="invert-90 centermiddle" alt="Tiling 0 of Rectangle 10" src="images/tiling-0-rectangle-10.png"/>
+<!-- <img class="invert-90 centermiddle" alt="Tiling 0 of Rectangle 10" src="images/tiling-0-rectangle-10.svg"/> -->
 
 ???
 
-* TODO
+* this is *Tiling 0* of *Rectangle 10*
+* the fill value is assigned according to the rectangle's row within the tiling
+  * the first row has a fill value of zero
+  * the second row has slightly higher fill value than the first
+  * and so on, creating a vertical gradient effect
 
 ---
 
-<img class="invert-80 centermiddle" alt="Tiling 3 of Rectangle 2" src="images/tiling-3-rectangle-2.png"/>
+<img class="invert-90 centermiddle" alt="Tiling 3 of Rectangle 2" src="images/tiling-3-rectangle-2.png"/>
+<!-- <img class="invert-90 centermiddle" alt="Tiling 3 of Rectangle 2" src="images/tiling-3-rectangle-2.svg"/> -->
 
 ???
 
-* TODO
+* this is *Tiling 3* of *Rectangle 2*
+* _Tiling 3_ assigns darkness based on how close a rectangle is to the center of
+  the tiling
+* but then introduces a little bit of random noise to perturb the results
+* what I like about the piece
+    * the kaleidoscope effect
+    * almost looks like stained glass or maybe water ripples
+    * this is another example of an _emergent property_
+        * the effect is created by the way one rectangle's interior boxes happen
+          to stack together next to another rectangle's interior boxes
+
+---
+
+# TODO: photo of tiling-3-rectangle-2 plotted
+
+???
+
+* This was my favorite of the tiling exercise; so I decided to plot it
+* another surprise: lines thicker -> much darker than anticipated
+* more ghostly
+
+---
+
+# .green[Constraint Breeds Creativity]
+
+### 1. How many ways can I \_\_\_\_\_\_\_\_\_\_\_\_?
+
+### 2. How many ways can I combine those?
+
+???
+
+* The hardest part is looking at a blank canvas and deciding what to do
+    * side step it by giving yourself constraints and an exercise
+    * and do as many things as you can within those constraints
+    * maybe even just sit down and write a list of all the things that might fit
+      those constraints first
+    * and then start coding them afterwards
+    * how many ways can I...
+        * fill a rectangle?
+        * draw a custom brush stroke along a given path?
+        * visualize Perlin noise?
+        * create some kind of random walker?
+    * once you have a bunch of methods for drawing within those constraints, how
+      many ways can you combine them?
+        * How can I tile these rectangles and their fill values?
+        * Can I construct interesting paths to draw based points where my random
+          walkers overlap each other?
+        * Can I define one of my brush stroke's lines in terms of another of my
+          brush strokes?
+
+---
+
+# .blue[Simple Combinations<br/>of Simple Primitives]
+
+### We don't need a framework to start making plotter art
+
+???
+
+* It doesn't take much to start making plotter art
+* You don't have to learn a framework like Processing or Open Frameworks or Nannou
+* You can start *now*!
+* I did these first pieces with just the `svg` crate
+    * but we don't even need that
+    * could just as easily concatenate strings of SVG fragments together!
+* I mention this because learning new frameworks can be intimidating/frustrating/slow
+    * and the best way to start making art is to hit the ground running
+    * once you have a problem that a framework is solving, *then* reach for the framework
+
+---
+
+<img class="centermiddle invert-90"
+     alt="Line segments intersecting and one shape occluding another"
+     src="images/line-intersection-and-occlusion.svg" />
+
+???
+
+
 
 ---
 
 class: middle, center
 
-# <big><big>Thank You!</big></big>
-<br/>
-### Nick Fitzgerald
-### [@fitzgen](https://twitter.com/fitzgen)
+# .purple[<big><big><big><big>Thank You!!</big></big></big></big>]
+
+### .green[Nick Fitzgerald] <br/> [@fitzgen](https://twitter.com/fitzgen)

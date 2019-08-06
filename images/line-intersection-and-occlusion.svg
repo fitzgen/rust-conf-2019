@@ -1,0 +1,16 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <line x1="20" y1="20" x2="180" y2="280" stroke="black" />
+  <line x1="160" y1="40" x2="35" y2="240" stroke="black" />
+  <circle cx="95.66" cy="142.95" r="5" fill="none" stroke="blue"/>
+
+  <polyline points="300,50 390,200 380,250 300,50"
+            width="90"
+            height="50"
+            stroke="black"
+            fill="hsla(190, 90%, 10%, 0.75)"/>
+  <polyline points="220,90 380,120 300,240 250,220 220,90"
+            width="90"
+            height="50"
+            stroke="black"
+            fill="hsla(60, 90%, 10%, 0.75)"/>
+</svg>
