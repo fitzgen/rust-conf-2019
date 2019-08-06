@@ -1,0 +1,4 @@
+digraph {
+  rankdir=LR;
+  svg -> plotter;
+}
