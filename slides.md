@@ -135,8 +135,8 @@ class: center, middle
 
 ---
 
-<video autoplay loop>
-  <source src="images/axidraw.mp4"/>
+<video autoplay loop class="centermiddle">
+  <source src="images/axidraw-rust-5x-transposed.webm"/>
   <p>Video not supported.</p>
 </video>
 
