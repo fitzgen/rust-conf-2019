@@ -4,17 +4,22 @@
     <title>Flatulence, Crystals, and Happy Little Accidents | Rust Conf 2019</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style>
-     @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-     @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+     @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+     @import url(https://fonts.googleapis.com/css?family=Roboto);
      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
      body {
-         font-family: 'Droid Serif', 'Times New Roman', 'serif';
+         font-family: 'Roboto', 'Times New Roman', 'serif';
      }
 
      h1, h2, h3, h4, h5, h6 {
-         font-family: 'Yanone Kaffeesatz', 'Helvetica', 'sans-serif';
+         font-family: 'Roboto Condensed', 'Helvetica', 'sans-serif';
          font-weight: normal;
+         z-index: 100;
+     }
+
+     h1, h2 {
+         font-weight: bold;
      }
 
      .remark-container, .remark-slide-content {
@@ -33,19 +38,32 @@
      }
 
      .remark-container a {
-         color: hsl(340, 100%, 75%);
+         color: hsl(340, 90%, 85%);
      }
 
      .remark-code, .remark-inline-code {
          font-family: 'Ubuntu Mono', 'monospace';
      }
 
-     .footnote {
+     .remark-slide img {
+         max-width: 100%;
+         max-height: 100%;
+     }
+
+     .headnote, .footnote {
          font-size: 0.8em;
-         bottom:12px;
-         position:absolute;
-         left:20px;
+         position: absolute;
+         left: 20px;
          opacity: 0.75;
+         z-index: 1;
+     }
+
+     .headnote {
+         top: 12px;
+     }
+
+     .footnote {
+         bottom: 12px;
      }
 
      .remark-slide-number {
@@ -53,8 +71,31 @@
          opacity: 0.75;
      }
 
+     .centermiddle {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         max-width: 100%;
+         height: calc(100% - 4em);
+     }
+
      big {
-         font-size: 1.6em;
+         font-size: 1.5em;
+     }
+
+     .hbox, .vbox {
+         display: flex;
+         align-items: center;
+         /* justify-content: center; */
+     }
+
+     .hbox {
+         flex-direction: row;
+     }
+
+     .vbox {
+         flex-direction: column;
      }
     </style>
   </head>
