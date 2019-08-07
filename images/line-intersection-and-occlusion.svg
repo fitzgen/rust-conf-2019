@@ -1,7 +1,19 @@
 <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-  <line x1="20" y1="20" x2="180" y2="280" stroke="black" />
-  <line x1="160" y1="40" x2="35" y2="240" stroke="black" />
-  <circle cx="95.66" cy="142.95" r="5" fill="none" stroke="blue"/>
+  <defs>
+    <pattern id="cross-hatch"
+             width="5"
+             height="5"
+             patternTransform="rotate(60 0 0)"
+             patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="black" stroke-width="2"/>
+    </pattern>
+  </defs>
+
+  <rect fill="url(#cross-hatch)" x="0" y="180" stroke="black" width="200" height="100"/>
+
+  <line x1="20" y1="10" x2="180" y2="140" stroke="black" />
+  <line x1="160" y1="20" x2="35" y2="120" stroke="black" />
+  <circle cx="95.66" cy="71.47" r="5" fill="none" stroke="blue"/>
 
   <polyline points="300,50 390,200 380,250 300,50"
             width="90"

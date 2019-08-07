@@ -170,7 +170,7 @@ class: center, middle
           you don't even have a marker for
     * I think this piece by Paul Rickards takes advantage of the medium superbly
         * the way that the rectangles overlap and the colors combine suggests a
-          transparency that isn't really there
+          transparency that isn't really there, and it gives the image depth
 * _this_ is what I was missing from generative art
     * I'm hooked
 * I made my decision:
@@ -468,11 +468,86 @@ trait Tiling {
 
 ???
 
-
+* as we saw with our first triangle svg, pen plotters don't support all the
+  features that software SVG renderers do
+* for example, software renderers will fill in shapes with colors or gradients
+    * if you want the plotter to fill a shape, you need to create a cross-hatch
+      pattern, or some other set of paths for it to draw that will fill the
+      shape
+* software
+* once you start running into these problems, it is a good time to consider
+  reaching for a library or framework
 
 ---
 
-class: middle, center
+# “fitzgen's art”
+
+---
+
+# “.green[f].opacity-half[itzgen's] .green[art]” ➟ “.green[fart]”
+
+---
+
+# TODO: Crystals
+
+---
+
+<img class="centermiddle"
+     alt="Aspirin Crystals by Carol Roullard"
+     src="images/carol-roullard-aspirin-2019.png" />
+
+.headnote[Source: [*Aspirin Crystals* by Carol Roullard](https://mobile.twitter.com/CRoullardArt/status/1104782729017585664)]
+
+???
+
+* TODO
+
+---
+
+<img class="centermiddle"
+     alt="Charoite by @micROCKScopica"
+     src="images/micROCKScopica-charoite-2018.jpg" />
+
+.headnote[Source: [*Charoite* by @micROCKScopica](https://mobile.twitter.com/micROCKScopica/status/1142428535036006401)]
+
+???
+
+* TODO
+
+---
+
+# TODO: feedback loop
+
+---
+
+# .green[Learn More]
+
+#### Follow
+
+* [#plottertwitter](https://twitter.com/hashtag/plottertwitter)
+
+#### Watch
+
+* [*Early Plotter Art, 1960s&mdash;1970s*](https://www.youtube.com/watch?v=OR_TzMFhv50) by Sher Minn Chong ([slides](http://piratefsh.github.io/presentations/plotter-history/))
+* [*A Box of Chaos: The Generative Artist's Toolkit*](https://www.youtube.com/watch?v=kZNTozzsNqk) by Benjamin Kovach
+
+#### Read
+
+* [*Computational Drawing*](http://lostritto.com/book) by Carl Lostritto
+* [*Computational Geometry in C*](http://cs.smith.edu/~jorourke/books/compgeom.html) by Joseph O'Rourke
+* [*Executing Generative Art with a Plotter*](https://tylerxhobbs.com/essays/2018/executing-generative-art-with-a-plotter) by Tyler Hobbs
+* [*On Generative Algorithms*](https://inconvergent.net/generative) by Anders Hoff
+* [*The Nature of Code*](https://natureofcode.com/) by Daniel Shiffman
+
+???
+
+* here are a few resources that I've found helpful while learning about
+  generative art and pen plotters
+* I know I'm missing a bunch of things here
+    * it wouldn't be possible to fit everything on one slide,
+    * but also unfortunately I wasn't taking notes the whole time
+
+---
 
 # .purple[<big><big><big><big>Thank You!!</big></big></big></big>]
 
