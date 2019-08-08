@@ -23,9 +23,7 @@ class: left, middle
 
 ---
 
-class: middle, center
-
-![Ferris the Crab with a WebAssembly Hard Hat](images/wasm-ferris.png)
+<img class="centermiddle" alt="Ferris the Crab with a WebAssembly Hard Hat" src="images/wasm-ferris.png"/>
 
 ???
 
@@ -44,9 +42,7 @@ class: middle, center
 
 ---
 
-class: center, middle
-
-<img alt="Throwing on a pottery wheel" src="images/Black_and_white_pottery.jpg" class="centermiddle"/>
+<img class="centermiddle" alt="Throwing on a pottery wheel" src="images/Black_and_white_pottery.jpg" class="centermiddle"/>
 
 .headnote[Source: <a href="https://commons.wikimedia.org/wiki/File:Black_and_white_pottery_(Unsplash).jpg)">Wikimedia</a>]
 
@@ -61,11 +57,9 @@ class: center, middle
 
 ---
 
-class: center, middle
-
 <img alt="Stone with copper and a glazed mug with copper sand" src="images/bluepotter.jpg" class="centermiddle"/>
 
-.headnote[Source: [instagram.com/bluepotter](https://www.instagram.com/p/BPJEw4nhqfU/)]
+.headnote[Source: [Matt Fiske Ceramics](https://www.instagram.com/p/BPJEw4nhqfU/)]
 
 ???
 
@@ -104,8 +98,6 @@ class: center, middle
       and having fun, which were my original goals
 
 ---
-
-class: center, middle
 
 <img alt="Process 13 (A) by Casey Reas, 2010" src="images/casey-reas-process-13.jpg" class="centermiddle"/>
 
@@ -150,9 +142,13 @@ class: center, middle
 
 .headnote[Source: [*Entropy Variation* by Paul Rickards, 2019](https://twitter.com/paulrickards/status/1133489029515751425)]
 
-<img class="float-left width-50" alt="Entropy Variation by Paul Rickards, 2019" src="images/paul-rickards-entropy-variation.jpeg"/>
-<img class="float-left width-50" alt="Close up of Entropy Variation by Paul Rickards, 2019" src="images/paul-rickards-entropy-variation-close-up-0.jpeg"/>
-<img class="float-left width-50" alt="Another close up of Entropy Variation by Paul Rickards, 2019" src="images/paul-rickards-entropy-variation-close-up-1.jpeg"/>
+<div class="hbox">
+  <img class="flex-1 small-padding" alt="Entropy Variation by Paul Rickards, 2019" src="images/paul-rickards-entropy-variation.jpeg"/>
+  <div class="vbox flex-1">
+    <img class="flex-1 small-padding" alt="Close up of Entropy Variation by Paul Rickards, 2019" src="images/paul-rickards-entropy-variation-close-up-0.jpeg"/>
+    <img class="flex-1 small-padding" alt="Another close up of Entropy Variation by Paul Rickards, 2019" src="images/paul-rickards-entropy-variation-close-up-1.jpeg"/>
+  </div>
+</div>
 
 ???
 
@@ -179,7 +175,7 @@ class: center, middle
 
 ---
 
-class: middle,center
+class: middle, center
 
 # .yellow[How do I use a pen plotter?]
 
@@ -405,7 +401,7 @@ trait Tiling {
 
 ---
 
-# TODO: photo of tiling-3-rectangle-2 plotted
+<img class="centermiddle" alt="Tiling 3 of rectangle 2, plotted" src="images/tiling-3-rectangle-2.jpeg"/>
 
 ???
 
@@ -470,25 +466,47 @@ trait Tiling {
 
 * as we saw with our first triangle svg, pen plotters don't support all the
   features that software SVG renderers do
-* for example, software renderers will fill in shapes with colors or gradients
-    * if you want the plotter to fill a shape, you need to create a cross-hatch
-      pattern, or some other set of paths for it to draw that will fill the
-      shape
-* software
+* software renderers will fill in shapes with colors or gradients
+    * if you want the plotter to fill a shape, you need to create a
+      cross-hatch pattern, or some other set of paths for it to draw that
+      will fill the shape
+* software renderers draw elements in order, and later elements can cover up
+  earlier elements so you can't see them
+    * a pen plotter will draw the first element, then draw the second element,
+      and now you have two elements drawn on top of each other
+    * if you want new elements to cover up old ones, you need to program that
+      behavior yourself, and only generate paths for things that are visible
 * once you start running into these problems, it is a good time to consider
   reaching for a library or framework
+
+(TODO: maybe this slide and the intro to fart on the next slides are too much of
+a non-sequitor? Should I move the intro to fart to the
+speeding-up-the-feedback-loop part?)
 
 ---
 
 # “fitzgen's art”
 
+???
+
+* or, if you're the type of person who thinks making their own pottery glaze
+  from scratch is a good idea, then you can also make your own computational
+  geometry library
+* I started collecting my crates and utilities together into my own personal
+  framework, which I titled "fitzgen's art"
+* but, as a name, "fitzgen's art" was too bloated
+  * so to release some of the pressure...
+
 ---
 
 # “.green[f].opacity-half[itzgen's] .green[art]” ➟ “.green[fart]”
 
----
+???
 
-# TODO: Crystals
+* I shortened it to "fart"
+* hence the "flatulence" part of this talk's title
+* OK, I promise that was the only fart joke in this talk, nothing else is going
+  to slip out
 
 ---
 
@@ -504,6 +522,78 @@ trait Tiling {
 
 ---
 
+<img class="centermiddle" alt="Voronoi Diagram" src="images/voronoi-diagram.svg"/>
+
+.headnote[Source: [Wikipedia](https://en.wikipedia.org/wiki/File:Euclidean_Voronoi_diagram.svg)]
+
+???
+
+* TODO
+
+---
+
+<img class="centermiddle" alt="Animation of Voronoi growth" src="images/voronoi-growth.gif"/>
+
+.headnote[Source: [Wikipedia](ohttps://en.wikipedia.org/wiki/File:Voronoi_growth_euclidean.gif)]
+
+???
+
+* TODO
+
+---
+
+```
+let center_points = random_points(N);
+for _ in 0..M {
+    let p = random_point();
+    let c = find_closest(p, &center_points);
+    draw_line(p, c);
+}
+```
+
+???
+
+* TODO
+
+---
+
+
+<img class="centermiddle" alt="Art inspired by crystal microscopy. Variation 0. Plotted." src="images/crissals-0-plotted.jpeg"/>
+
+???
+
+* TODO
+
+---
+
+<div class="hbox">
+  <img class="small-padding invert-90" alt="Art inspired by crystal microscopy. Variation 1. Software rendering." src="images/crissals-1.svg"/>
+  <img class="small-padding" alt="Art inspired by crystal microscopy. Variation 1. Plotted." src="images/crissals-1-plotted.jpeg"/>
+</div>
+
+???
+
+* TODO
+
+---
+
+<img class="centermiddle" alt="Art inspired by crystal microscopy. Variation 2. Plotted." src="images/crissals-2-plotted.jpeg"/>
+
+???
+
+* TODO
+
+---
+
+<img class="centermiddle" alt="A plot of my crystal microscopy-inspired piece" src="images/crissals-with-colors-plotted.jpeg"/>
+
+???
+
+* this piece uses gel pens on black paper
+* algorithm
+
+---
+
 <img class="centermiddle"
      alt="Charoite by @micROCKScopica"
      src="images/micROCKScopica-charoite-2018.jpg" />
@@ -513,6 +603,32 @@ trait Tiling {
 ???
 
 * TODO
+
+---
+
+# TODO: rox and rox2
+
+???
+
+* TODO
+
+---
+
+class: middle, center
+
+# .purple[Copy Something]
+
+???
+
+* "good artists copy; great artists steal"
+    * since we're just starting out, I'm pretty happy with "good"
+* but I think the lesson here is to find inspiration in something and then try to copy it
+    * this can actually be some plotter art made by someone else
+        * maybe vintage plotter art from the 1960s
+    * or it could be translating something that isn't related to computers at
+      all into the plotter medium
+        * for example, the pattern of cracks in mud that's dried in the sun
+        * or plant, flower, and leaf growth patterns
 
 ---
 
