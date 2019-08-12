@@ -518,7 +518,14 @@ speeding-up-the-feedback-loop part?)
 
 ???
 
-* TODO
+* I follow a few people on twitter who do microscope photography
+* this is a photo of Aspirin Crystals by Carol Roullard
+* you can see the regions of crystal growth where each crystal kept growing
+  until it ran into another crystal
+* the way that each crystal is almost exploding out from its center looks like
+  fireworks
+* I think this is _quite_ cool and I'd like to make some plotter art that is
+  reminiscent of this
 
 ---
 
@@ -528,7 +535,10 @@ speeding-up-the-feedback-loop part?)
 
 ???
 
-* TODO
+* this reminds me of *Voronoi diagrams* from geometry
+* a voronoi diagram has a set of seed points
+* and it colors every point on the plane by which seed each point is closes to
+* the result you get looks very similar to the zones in our crystal photo
 
 ---
 
@@ -538,22 +548,31 @@ speeding-up-the-feedback-loop part?)
 
 ???
 
-* TODO
+* which makes a lot of sense, since you can create a voronoi diagram by flood
+  filling outwards from each of the seeds at the same time
+* which is intuitively similar to how a crystal grows outward until it runs into
+  another crystal
 
 ---
 
 ```
-let center_points = random_points(N);
+let seeds = random_points(N);
 for _ in 0..M {
     let p = random_point();
-    let c = find_closest(p, &center_points);
+    let c = find_closest(p, &seeds);
     draw_line(p, c);
 }
 ```
 
 ???
 
-* TODO
+* we can use our understanding of voronoi diagrams to help create a Rust program
+  for generating crystal-inspired art
+* initially, we choose `N` random points to be our seeds
+* and then we choose `M` random points and for each one, draw a line to its
+  closest seed
+* these lines should give the "exploding" aesthetic that the original crystal
+  photo has
 
 ---
 
@@ -562,7 +581,11 @@ for _ in 0..M {
 
 ???
 
-* TODO
+* this simple algorithm works pretty well!
+    * here it is plotted on black paper with white gel pen
+    * I can definitely see the resemblence to the crystals
+* only difference this has from the algorithm that was just presented is that
+  the lines only go part of the way to the seed, so that it isn't too crowded
 
 ---
 
@@ -573,7 +596,12 @@ for _ in 0..M {
 
 ???
 
-* TODO
+* I also played with giving each seed a randomized "gravity" level so that we
+  get some more variation in crystal sizes
+    * this wasn't really what I intended but I think it came out kind of cool
+* and I'm also trying to re-create the crystal's rainbow pinwheel effect, but in
+  black-and-white, via changing the length of the lines based on the angle from
+  the seed
 
 ---
 
@@ -581,7 +609,7 @@ for _ in 0..M {
 
 ???
 
-* TODO
+* here is another variation, this time only choosing points within a circle
 
 ---
 
@@ -589,10 +617,12 @@ for _ in 0..M {
 
 ???
 
-* this piece uses gel pens on black paper
-* algorithm
+* this final variation uses multiple colors directly for the pinwheel effect,
+  instead of line length
 
 ---
+
+exclude: true
 
 <img class="centermiddle"
      alt="Charoite by @micROCKScopica"
@@ -605,6 +635,8 @@ for _ in 0..M {
 * TODO
 
 ---
+
+exclude: true
 
 <img class="centermiddle"
      alt="A rock microscopy-inspired piece."
@@ -623,13 +655,14 @@ class: middle, center
 ???
 
 * "good artists copy; great artists steal"
-    * since we're just starting out, I'm pretty happy with "good"
+    * since I'm new to this, I'll settle for "good"
 * but I think the lesson here is to find inspiration in something and then try to copy it
     * this can actually be some plotter art made by someone else
         * maybe vintage plotter art from the 1960s
     * or it could be translating something that isn't related to computers at
       all into the plotter medium
-        * for example, the pattern of cracks in mud that's dried in the sun
+        * for example, the pattern of cracks on the glaze of some piece of
+          pottery
         * or plant, flower, and leaf growth patterns
 
 ---
@@ -667,24 +700,98 @@ class: middle, center
 
 ---
 
-# TODO: screenshot of https://www.kovach.me/posts/2018-10-13-infrastructure-of-art.html
+<cite><a href="https://www.kovach.me/posts/2018-10-13-infrastructure-of-art.html">Tips for Generative Infrastructure and Tooling</a> by Benjamin Kovach:</cite>
+
+> ### Rendering new images on any source change
+>
+> When I make a change in a file, I expect to see the result of that change as
+> soon as possible, without doing anything extra.
 
 ???
 
-* Someone already laid out exactly how to solve this problem!
-    * Use a file watcher -> recompile and rerun on every change
+* luckily Benjamin Kovach wrote a great article on tooling and infrastructure
+  for generative art, laying out how to solve this problem (and others)!
+    * Use a file watcher -> automatically recompile and rerun on every change
     * if recompiles OK && generates SVG OK then
         * save image as `images/<timestamp>.svg`
         * symlink as `images/latest.svg`
         * make a git commit of everything: images and code
             * This way you never lose any image you ever generate and you also
               have the code that generated the image, if you want to go back and
-              riff on a different theme from what you did the first tim
+              riff on a different theme from what you did the first time
+* I thought these tips were really great
+    * especially about saving all images you ever generate
+    * and this did speed up my feedback loop a little bit
+* _however:_ it didn't solve the problem. my feedback loop is _still_ too slow:
+    * I'm not manually kicking off compiles and running the program
+      anymore,
+    * but I'm still
+        * waiting on compiles,
+        * alt-tab'ing to Firefox,
+        * refreshing to see the latest SVG,
+        * alt-tab'ing back to Emacs,
+    * and it is frustrating because it seems like my changes are usually small
+      things, like:
+        * what if there were 9 rows and columns instead of 5?
+        * what if gravity was half as strong?
 
+---
+
+class: center
+
+## Types of Changes
+
+<img alt="Graph of types of changes" src="images/types-of-changes.svg"/>
+
+???
+
+* so I actually took a random sample of commits from one of my pieces and
+  categorized their changes. they all fit into three categories:
+    * "algorithmic" changes = things that actually change something about the
+      algorithm of the code
+    * "constant" changes = tweaking a constant value, e.g. changing the std
+      dev. of some normal distribution I'm using
+    * "formatting" changes = essentially I just ran `rustfmt`
+* I'm spending most of my time waiting on compiles for tweaking *constants*?!
+    * I already knew this deep down, but to having empirical evidence, it just
+      blows my mind
+
+---
+
+```
+fart::user_const! {
+    const NUMBER_OF_PARTICLES: usize = 1234;
+}
+```
+
+???
+
+* so I invented this brand new thing which I call "user constants"
+    * they let me tweak constant values across runs of the program without
+      recompiling it
+    * you might know them by the name "environment variables"
 
 ---
 
 <img class="centermiddle" alt="The fart local server and UI in action" src="images/fart-in-action.png"/>
+
+???
+
+* but "user constants" aren't _just_ environment variables
+* there's also a local server that goes with them
+    * the local server has a web UI with a form widget for each user constant
+        * these are over on the bottom left
+    * tweak the constant -> POST request to the local server
+    * which updates the environment variable
+    * re-runs the program
+    * and pushes the generated SVG back the web UI so it is refreshed
+      automatically
+* additionally, I'm running split screen with emacs so I don't need to do any
+  alt-tab'ing anymore
+
+---
+
+## .green[Edit] <br/> .strike[Compile] <br/> .green[Run] <br/> .strike[Alt-Tab to Firefox] <br/> .strike[Refresh] <br/> .strike[Alt-Tab back to Emacs] <br/> .green[Repeat]
 
 ???
 
@@ -710,8 +817,7 @@ class: middle, center
 #### Watch
 
 * [*Early Plotter Art, 1960s&mdash;1970s*](https://www.youtube.com/watch?v=OR_TzMFhv50) by Sher Minn Chong ([slides](http://piratefsh.github.io/presentations/plotter-history/))
-* TODO: process presentation by Casey Reas
-* [*A Box of Chaos: The Generative Artist's Toolkit*](https://www.youtube.com/watch?v=kZNTozzsNqk) by Benjamin Kovach
+* [*Process Compendium*](https://vimeo.com/22955812) by Casey Reas
 
 #### Read
 
