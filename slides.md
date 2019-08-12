@@ -684,6 +684,14 @@ class: middle, center
 
 ---
 
+<img class="centermiddle" alt="The fart local server and UI in action" src="images/fart-in-action.png"/>
+
+???
+
+* TODO
+
+---
+
 <img class="centermiddle" alt="Crumpled ribbons" src="images/crumpled-ribbons.jpeg"/>
 
 ???
