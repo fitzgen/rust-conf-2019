@@ -17,9 +17,8 @@ class: left, middle
 
 ???
 
-* hi
+* hi, I'm Nick Fitzgerald
 * thanks for coming to my talk about algorithmic art and Rust
-* back up first and give you some context to my story
 
 ---
 
@@ -28,16 +27,19 @@ class: left, middle
 ???
 
 * I do Rust things for work
-    * these days on the intersection of Rust and WebAssembly
+    * intersection of Rust and WebAssembly
     * make fast things
     * make robust/reliable things
-* create tools with good developer experiences, supporting many use cases
-    * tools to help others build fast, robust, reliable things
-* and I love my job!
-    * but sometimes it can feel like a lot of Serious Business
-* in my spare time, also writing little crates and side projects in Rust for fun
-    * but these side projects had a tendency to become a part of my work
-* realized that I was actually just working all the time
+* create tools
+    * w/ good developer experiences
+    * supporting many use cases
+    * help others build fast/robust/reliable things
+* I love my job!
+    * Serious Business
+* in my spare time?
+    * side projects in Rust for fun
+    * but: semi related to work --> become part of work
+* realized: just working all the time
 * not a recipe for a well-rounded life
 
 ---
@@ -49,11 +51,11 @@ class: left, middle
 ???
 
 * took up pottery as a hobby
-* shaping the clay with my hands appealed to me
+* shaping clay w/ my hands was appealing
 * I wanted a hobby that couldn't turn into work
-    * something that doesn't have stakeholders
-    * something that is just for me
-    * something that I can relax and have fun doing
+    * no stakeholders
+    * just for me
+    * relax and have fun
 
 ---
 
@@ -63,12 +65,9 @@ class: left, middle
 
 ???
 
-* what I really liked about pottery:
-    * every facet of it has so much depth you could spend a lifetime exploring it
-        * if you love throwing on the wheel, you can perfect throwing long,
-          skinny, fragile vases
-        * or you can make your own glazes from scratch, like what was done with
-          this image
+* every facet has so much depth
+    * love throwing? --> long/skinny/fragile vases
+    * or make glaze from scratch, like this image
 
 ---
 
@@ -76,26 +75,24 @@ class: left, middle
 
 ???
 
-* with glaze in particular, the whole felt greater than the parts
-    * there is an element of surprise
-        * because glaze is often dull and chalky before you fire it
-        * comes out glassy and colorful
-    * you can combine glazes by mixing or layering
-        * I discovered that if I put a coat of black on top of green, then
-          * I got something that came out metallic and shimmery
-          * almost like an oil slick
-          * neither glaze alone had this property, but combine them and
-            something new/surprising _emerges_
-          * I tried to recreate this effect with five bowls
-          * only a single bowl made it through the process
-* pottery is very difficult and requires lots of patience
-    * things can irreparably break at every step of the whole process
-    * there is no undo or version control
-    * this difficulty is part of the craft and what makes it so impressive!
+* glaze: whole > parts
+    * element of surprise
+        * before firing: dull/chalky
+        * after: glassy and colorful
+    * combine glazes: mixing / layering
+        * discovered: black on top of green, then
+          * metallic and shimmery; oil slick
+          * neither glaze alone had property
+          * combine --> something new/surprising _emerges_
+          * tried: recreate w/ five bowls
+          * only one survived
+* b/c pottery is difficult / requires patience
+    * can break at every step
+    * no undo / version control
+    * part of craft: impressive!
 * personal realization:
-    * despite all these things about pottery that I really enjoyed,
-    * I was getting more frustrated by pottery's difficulty than I was relaxing
-      and having fun, which were my original goals
+    * despite things about pottery that I enjoyed,
+    * more frustrated by difficulty than relaxing / having fun
 
 ---
 
@@ -105,22 +102,17 @@ class: left, middle
 
 ???
 
-* heard of "generative art" and "algorithmic art"
-* where people would write programs that generate images, animations, or music
-* the same way I enjoyed discovering how glazes could combine such that their
-  sum was greater than the individual glazes,
-* generative artists are often searching to program simple rules that combine to
-  create emergent behavior that is more bigger than any single rule
-    * for example, this is *Process 13 (A)* by Casey Reas
-        * circles moving behind the scenes
-          * but they're not drawn directly
-        * whenever circles are touching, draw a line between their centers
-    * there is no code that says "draw these trellises"
-        * they emerge from the process to surprise and delight us
-* however, while I appreciated this art when I saw it, I wasn't ever overcome by
-  the urge to produce it myself
-    * there was still something missing:
-    * nothing to hold onto; nothing physical
+* "generative/algorithmic art" = write programs to generate images/animations/music
+* recognized similarity w/ surprise of combining glazes:
+    * generative artists programming simple rules --> emergent behavior, bigger
+      than any single rule
+        * *Process 13 (A)* by Casey Reas
+            * circles moving behind scenes
+              * not drawn directly
+            * circles touching --> draw a line
+        * no code says "draw trellises"
+            * emerge from process to surprise / delight us
+* however: nothing physical
 
 ---
 
@@ -131,12 +123,12 @@ class: left, middle
 
 ???
 
-* and then I discovered pen plotters
-* a pen plotter is a robot
+* discovery: pen plotters
+* pen plotter = robot
     * you put a pen in its hand
     * and then you tell it to draw something
-    * and this is the important part: and then it actually draws it!
-    * now you have a physical, pen and paper artifact of your algorithm!!
+    * and then -- important part -- draws it!
+* now you have: physical, pen and paper artifact of generative algorithm!!
 
 ---
 
@@ -152,26 +144,24 @@ class: left, middle
 
 ???
 
-* in addition to creating an artifact you can frame and give to someone, the
-  physical leaves more room for _emergence_:
-    * a pen doesn't draw perfect Euclidean lines with zero area
-    * different pens draw different lines
-        * color
+* physical medium = more variables / emergence:
+    * pen can't draw Euclidean lines w/ zero area
+    * different pens
         * width
-        * ballpoint pens vs fountain pens vs markers vs gel pens
+        * color
+        * ballpoint vs fountain vs markers vs gel
     * ink bleeds
-        * move the pen slower -> more bleeding
+        * move the pen slower --> more bleeding
     * colors combine
-        * draw a blue line on top of a yellow one -> get a shade of green that
-          you don't even have a marker for
-    * I think this piece by Paul Rickards takes advantage of the medium superbly
-        * the way that the rectangles overlap and the colors combine suggests a
-          transparency that isn't really there, and it gives the image depth
-* _this_ is what I was missing from generative art
-    * I'm hooked
-* I made my decision:
-    * I want to make algorithmic art
-    * and I'm going to bring it into the physical world with a pen plotter
+        * blue on yellow --> unique green
+    * this piece by Paul Rickards
+        * takes advantage of medium superbly
+        * rectangles overlap / colors combine --> transparency / depth
+* _this_ = what was missing
+* decision:
+    * make algorithmic art
+    * bring into physical world w/ pen plotter
+* bought AxiDraw
 
 ---
 
@@ -181,8 +171,8 @@ class: middle, center
 
 ???
 
-* at this point I have a lot more excitement than knowledge
-* how do I get my new pen plotter to draw something?
+* more excitement than knowledge
+* how to draw something?
 
 ---
 
@@ -192,19 +182,16 @@ class: middle, center
 
 ???
 
-* the easiest way is to use SVG
-* SVG stands for Scalable Vector Graphics
-* "Vector" means that instead of talking about pixels, like jpeg and PNG do, we
-  have shapes and paths
-* the shapes and paths are described within some abstract coordinate space
-* and the pen plotter can _scale_ the SVG's coordinate space up or down to the
-  size of the paper that it's drawing on
-    * and draw these shapes and paths with the pen you give
-* How many of you know HTML or XML?
-    * raise your hands -- great!
-    * just like HTML and XML, SVG is a text format with a bunch of elements in
-      pointy brackets
-    * So everyone who just raised their hand is ready to be a plotter artist :)
+* easiest way = SVG
+    * <u>S</u>calable <u>V</u>ector <u>G</u>raphics
+* no pixels; shapes and paths
+* shapes/paths described w/in abstract coordinate space
+* pen plotter _scalse_ coordinate space up / down --> size of paper
+    * draws scaled shapes/paths/lines
+* ask: know HTML / XML?
+    * raise hands -- awesome!
+    * like HTML / XML: SVG is text with pointy brackets
+    * everyone who raised hand = on the way to being a plotter artist :)
 
 ---
 
@@ -234,14 +221,15 @@ svg::save("triangle.svg", &document)?;
 
 ???
 
-* but I don't want to plot any old SVG
-    * I want to programmatically generate my own SVGs from Rust
-* the `svg` crate gives us a nice builder-style API for creating SVGs
-    * and we can get surprisingly far using just this crate
-* this example draws a triangle
-    * the _path data_ describes a sequence of strokes in the coordinate space
-    * the _path element_ describes the styles of how the strokes should be drawn
-    * finally, the _document_ is the whole SVG image and its view box
+* don't want: plot existing SVG
+    * want: generate my own SVGs w/ Rust
+* `svg` crate:
+    * builder-style API
+    * can get surprisingly far w/ just this crate
+* this example = triangle
+    * _data_ = sequence of strokes in coordinate space
+    * _path element_ = styles for strokes
+    * _document_ = whole SVG image and box in coordinate space to render
 
 ---
 
@@ -251,9 +239,9 @@ svg::save("triangle.svg", &document)?;
 
 ???
 
-* to get an SVG to the AxiDraw, which is the pen plotter that I have, use `saxi`
-    * nice Web frontend to control the plotter
-    * makes calibrating the pen's up and down height and centering on the page easy
+* send SVG --> AxiDraw? use `saxi`
+    * nice Web frontend
+    * calibrating pen's up / down height; centering
     * can't recommend it highly enough
 
 ---
@@ -274,16 +262,18 @@ svg::save("triangle.svg", &document)?;
 
 ???
 
-* ok here is the result!
-* on the top, we have the generated SVG source text for `triangle.svg`
-    * as you can see it has a proper amount of pointy brackets
-* on the bottom left, we have a software rendering of `triangle.svg`
-* and on the bottom right, we have a photograph of `triangle.svg` drawn by a pen
-  plotter with a TODO pen/marker
-* when we generated the SVG, we said that the stroke lines would be fairly thick
-  and blue
-    * but as you can see, the pen plotter doesn't care what we said
-    * it just moves its pen according to the paths
+* here is result!
+* top:
+    * SVG source text for `triangle.svg`
+    * proper amount of pointy brackets
+* bottom left:
+    * software rendering of `triangle.svg`
+* bottom right:
+    * photograph of `triangle.svg` drawn by pen plotter w/ TODO pen/marker
+* we said "thick, blue lines"
+    * software renderer drew them
+    * pen plotter can't
+        * just moves pen along paths
 
 ---
 
@@ -303,11 +293,12 @@ trait Rectangle {
 
 ???
 
-* now that I could generate SVGs and plot them, I set an exercise for myself
-* how many ways could I fill a rectangle?
-* parameterized by a "darkness" value
-    * where 0 ~= empty
-    * and 1 ~= completely filled
+* now can generate / plot SVGs --> exercise for myself
+* how many ways can I fill a rectangle?
+    * parameterized by a "darkness" value
+        * where 0 ~= empty
+        * and 1 ~= completely filled
+* how many impls of this trait?
 
 ---
 
@@ -315,13 +306,13 @@ trait Rectangle {
 
 ???
 
-* This is *Rectangle 2* with values 0.1, 0.5, and 0.9
-* To create rectangle 2:
-    * choose a random point within the rectangle
-    * draw boxes out from that point with uniform distances between them until
-      they fill the whole rectangle
-    * lower value -> fewer boxes
-    * higher value -> more boxes
+* *Rectangle 2*
+* darkness values = 0.1, 0.5, 0.9
+* algorithm:
+    * choose random point in rectangle
+    * draw boxes out from that point, at uniform distances, until rectangle filled
+    * lower darkness value --> fewer boxes
+    * higher darkness value --> more boxes
 
 ---
 
@@ -329,10 +320,10 @@ trait Rectangle {
 
 ???
 
-* *Rectangle 6* is similar to rectangle 2
-* except we always start in the middle
-* and boxes that are closer to the middle have corners that are more rounded
-  than the corners of boxes further from the middle
+* *Rectangle 6*
+    * similar to rectangle 2, except start in middle
+* boxes closer to the middle = more rounded
+* boxes further from middle = less rounded
 
 ---
 
@@ -340,9 +331,10 @@ trait Rectangle {
 
 ???
 
-* *Rectangle 8* chooses points some distance along each of the outer rectangle's
-  edges, and then draws lines between those points to create a new rectangle
-* and it continues recursively
+* *Rectangle 8*
+    * choose points at distance d along rectangle's outer edges
+    * draw lines between points --> creates new quadrilateral
+    * continue recursively
 
 ---
 
@@ -365,8 +357,8 @@ trait Tiling {
 
 ???
 
-* next, I explored ways to compose these rectangles by tiling them and varying
-  the fill value across the individual rectangles within the tiling
+* have many rectangles --> compose via tiling
+    * vary darkness value for each rectangle
 
 ---
 
@@ -375,11 +367,11 @@ trait Tiling {
 
 ???
 
-* this is *Tiling 0* of *Rectangle 10*
-* the fill value is assigned according to the rectangle's row within the tiling
-  * the first row has a fill value of zero
-  * the second row has slightly higher fill value than the first
-  * and so on, creating a vertical gradient effect
+* *Tiling 0* of *Rectangle 10*
+* darkness value = row height
+    * first row = 0
+    * last row = 1
+    * vertical gradient effect
 
 ---
 
@@ -388,16 +380,14 @@ trait Tiling {
 
 ???
 
-* this is *Tiling 3* of *Rectangle 2*
-* _Tiling 3_ assigns darkness based on how close a rectangle is to the center of
-  the tiling
-* but then introduces a little bit of random noise to perturb the results
-* what I like about the piece
-    * the kaleidoscope effect
-    * almost looks like stained glass or maybe water ripples
-    * this is another example of an _emergent property_
-        * the effect is created by the way one rectangle's interior boxes happen
-          to stack together next to another rectangle's interior boxes
+* *Tiling 3* of *Rectangle 2*
+* darkness = how close to center of tiling?
+    * w/ a little random noise
+* I like:
+    * kaleidoscope effect
+    * stained glass
+    * maybe water ripples
+    * _emergent_
 
 ---
 
@@ -405,8 +395,9 @@ trait Tiling {
 
 ???
 
-* This was my favorite of the tiling exercise; so I decided to plot it
-* another surprise: lines thicker -> much darker than anticipated
+* favorite of tiling exercise --> decided to plot it
+* another surprise:
+    * lines thicker --> much darker than anticipated
 * more ghostly
 
 ---
@@ -419,24 +410,17 @@ trait Tiling {
 
 ???
 
-* The hardest part is looking at a blank canvas and deciding what to do
-    * side step it by giving yourself constraints and an exercise
-    * and do as many things as you can within those constraints
-    * maybe even just sit down and write a list of all the things that might fit
-      those constraints first
-    * and then start coding them afterwards
-    * how many ways can I...
-        * fill a rectangle?
-        * draw a custom brush stroke along a given path?
-        * visualize Perlin noise?
-        * create some kind of random walker?
-    * once you have a bunch of methods for drawing within those constraints, how
-      many ways can you combine them?
-        * How can I tile these rectangles and their fill values?
-        * Can I construct interesting paths to draw based points where my random
-          walkers overlap each other?
-        * Can I define one of my brush stroke's lines in terms of another of my
-          brush strokes?
+* hardest part of starting = blank canvas
+    * side step w/ constraints + exercise
+* write list first, code after?
+* how many ways can I...
+    * fill rectangle?
+    * draw custom brush stroke along given path?
+    * visualize Perlin noise?
+    * create some kind of random walker?
+* next: how many ways can I combine them?
+    * tile rectangles + assign darkness values?
+    * draw random walker's paths with custom brush strokes?
 
 ---
 
@@ -446,15 +430,16 @@ trait Tiling {
 
 ???
 
-* It doesn't take much to start making plotter art
-* You don't have to learn a framework like Processing or Open Frameworks or Nannou
-* You can start *now*!
-* I did these first pieces with just the `svg` crate
-    * but we don't even need that
-    * could just as easily concatenate strings of SVG fragments together!
-* I mention this because learning new frameworks can be intimidating/frustrating/slow
-    * and the best way to start making art is to hit the ground running
-    * once you have a problem that a framework is solving, *then* reach for the framework
+* doesn't take much to start making plotter art
+    * don't have to learn framework
+    * can start *now*!
+* first pieces w/ just `svg` crate
+    * SVG is pretty rich
+* learning new frameworks can be intimidating
+    * large API surface
+    * sometimes best way to start = hit the ground running
+* once you have a problem that a framework solves,
+    * *then* reach for framework
 
 ---
 
@@ -464,24 +449,26 @@ trait Tiling {
 
 ???
 
-* as we saw with our first triangle svg, pen plotters don't support all the
-  features that software SVG renderers do
-* software renderers will fill in shapes with colors or gradients
-    * if you want the plotter to fill a shape, you need to create a
-      cross-hatch pattern, or some other set of paths for it to draw that
-      will fill the shape
-* software renderers draw elements in order, and later elements can cover up
-  earlier elements so you can't see them
-    * a pen plotter will draw the first element, then draw the second element,
-      and now you have two elements drawn on top of each other
-    * if you want new elements to cover up old ones, you need to program that
-      behavior yourself, and only generate paths for things that are visible
-* once you start running into these problems, it is a good time to consider
-  reaching for a library or framework
+* as we saw w/ `triangle.svg`:
+    * plotters don't support all SVG features that software renderers do
+* software renderers:
+    * fill in shapes with colors or gradients
+        * w/ plotter: need to create cross-hatch pattern
+    * draw elements in order
+        * later elements can occlude earlier elements
+        * w/ plotter:
+            * draw first element
+            * then draw second element,
+            * result = elements drawn on top of each other
+        * if want occlusion:
+            * only generate paths that aren't covered
+* stop line when it hits another line?
+* running into these problems?
+    * consider library / framework
 
-(TODO: maybe this slide and the intro to fart on the next slides are too much of
-a non-sequitor? Should I move the intro to fart to the
-speeding-up-the-feedback-loop part?)
+*(TODO: maybe this slide and the intro to fart on the next slides are too much
+of a non-sequitor? Should I move the intro to fart to the
+speeding-up-the-feedback-loop part?)*
 
 ---
 
@@ -489,13 +476,12 @@ speeding-up-the-feedback-loop part?)
 
 ???
 
-* or, if you're the type of person who thinks making their own pottery glaze
-  from scratch is a good idea, then you can also make your own computational
-  geometry library
-* I started collecting my crates and utilities together into my own personal
-  framework, which I titled "fitzgen's art"
-* but, as a name, "fitzgen's art" was too bloated
-  * so to release some of the pressure...
+* or make your own personal framework!
+    * started collecting my own crates for computational geometry and vector
+      graphics
+    * named it "fitzgen's art"
+* too bloated
+    * so to release some of the pressure...
 
 ---
 
@@ -503,10 +489,10 @@ speeding-up-the-feedback-loop part?)
 
 ???
 
-* I shortened it to "fart"
-* hence the "flatulence" part of this talk's title
-* OK, I promise that was the only fart joke in this talk, nothing else is going
-  to slip out
+* it became "fart"
+    * hence the "flatulence" part of this talk's title
+* promise: only fart joke in this talk
+    *  nothing else is going to slip out
 
 ---
 
@@ -518,14 +504,14 @@ speeding-up-the-feedback-loop part?)
 
 ???
 
-* I follow a few people on twitter who do microscope photography
-* this is a photo of Aspirin Crystals by Carol Roullard
-* you can see the regions of crystal growth where each crystal kept growing
-  until it ran into another crystal
-* the way that each crystal is almost exploding out from its center looks like
-  fireworks
-* I think this is _quite_ cool and I'd like to make some plotter art that is
-  reminiscent of this
+* I follow people on twitter who do microscope photography
+* this photo: Aspirin Crystals by Carol Roullard
+    * outward growth until hits another crystal
+        * forms zone
+    * lines radiating out from center of each crystal
+        * almost like exploding fireworks
+        * colorful pinwheel effect
+* _quite_ cool --> like to make plotter art reminiscent of this
 
 ---
 
@@ -535,10 +521,10 @@ speeding-up-the-feedback-loop part?)
 
 ???
 
-* this reminds me of *Voronoi diagrams* from geometry
-* a voronoi diagram has a set of seed points
-* and it colors every point on the plane by which seed each point is closes to
-* the result you get looks very similar to the zones in our crystal photo
+* this reminds me of *Voronoi diagrams:*
+    * set of seed points
+    * colors every point on plane by which seed each point is closest
+* result = zones similar to our crystal photo
 
 ---
 
@@ -711,7 +697,7 @@ class: middle, center
 
 * luckily Benjamin Kovach wrote a great article on tooling and infrastructure
   for generative art, laying out how to solve this problem (and others)!
-    * Use a file watcher -> automatically recompile and rerun on every change
+    * Use a file watcher --> automatically recompile and rerun on every change
     * if recompiles OK && generates SVG OK then
         * save image as `images/<timestamp>.svg`
         * symlink as `images/latest.svg`
@@ -782,7 +768,7 @@ fart::user_const! {
     * the local server has a web UI with a form widget dynamically created for
       each user constant
         * these are over on the bottom left
-    * tweak the constant -> POST request to the local server
+    * tweak the constant --> POST request to the local server
     * which updates the environment variable
     * re-runs the program
     * and pushes the generated SVG back the web UI so the preview is refreshed
@@ -849,8 +835,14 @@ fart::user_const! {
     * but also unfortunately I wasn't taking notes the whole time
 * I hope my story has inspired some of you to try your hand at this stuff or
   maybe pottery
-* TODO: make connection to non-art stuff
-* TODO: maybe shorten
+* I think a lot of the take aways are generally applicable even if you aren't
+  doing art, but just professional programming:
+    * define constraints to make a problem smaller and easier to solve
+    * copy something to learn more about it, or to cross pollinate ideas from
+      another field
+    * analyze your feedback loop and iteration times, gather empirical evidence,
+      treat it as a profiling and optimization problem and buil custom tooling
+      to boost your productivity
 
 ---
 
