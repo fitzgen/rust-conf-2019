@@ -767,7 +767,7 @@ fart::user_const! {
 ???
 
 * so I invented this brand new thing which I call "user constants"
-    * they let me tweak constant values across runs of the program without
+    * they let me tweak constant values in between runs of the program without
       recompiling it
     * you might know them by the name "environment variables"
 
@@ -779,12 +779,13 @@ fart::user_const! {
 
 * but "user constants" aren't _just_ environment variables
 * there's also a local server that goes with them
-    * the local server has a web UI with a form widget for each user constant
+    * the local server has a web UI with a form widget dynamically created for
+      each user constant
         * these are over on the bottom left
     * tweak the constant -> POST request to the local server
     * which updates the environment variable
     * re-runs the program
-    * and pushes the generated SVG back the web UI so it is refreshed
+    * and pushes the generated SVG back the web UI so the preview is refreshed
       automatically
 * additionally, I'm running split screen with emacs so I don't need to do any
   alt-tab'ing anymore
@@ -795,7 +796,14 @@ fart::user_const! {
 
 ???
 
-* TODO
+* now, for constant tweaking, which was ~60% of the changes that I make, the
+  feedback loop's critical path is just edit the constant and look at the
+  updated image in practice
+    * the program does need to be re-run, but it happens automatically and I'm
+      not waiting around for it to finish
+    * the previous screenshot says it took just under 10 milliseconds to run the
+      program and generate the SVG, which is barely perceptible
+* with this setup, my feedback loop is finally near-instantaneous
 
 ---
 
@@ -803,8 +811,13 @@ fart::user_const! {
 
 ???
 
-* TODO: result is I am able to get near-instant feedback and make pieces I am
-  increasingly happy with, such as this one
+* The result is I am able to explore more ideas faster than I previously could
+* I'm making new pieces I'm increasingly happy with, such as this one
+* and at the end of the day:
+    * I have a hobby that isn't work
+    * that I can do just for me,
+    * I'm having fun making algorithmic art with Rust and then bringing it into
+      the physical world with my pen plotter
 
 ---
 
@@ -834,6 +847,10 @@ fart::user_const! {
 * I know I'm missing a bunch of things here
     * it wouldn't be possible to fit everything on one slide,
     * but also unfortunately I wasn't taking notes the whole time
+* I hope my story has inspired some of you to try your hand at this stuff or
+  maybe pottery
+* TODO: make connection to non-art stuff
+* TODO: maybe shorten
 
 ---
 

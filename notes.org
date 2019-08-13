@@ -501,3 +501,8 @@ from what you did the first time
 **** change code/algorithm: 18
 **** change constants: 38
 **** formatting: 9
+* jeena feedback:
+** make connection to non-art things in conclusion
+*** can copy or use constraints for learning professional programming things
+** shorten tiling -- maybe even skip
+*** more on the tooling side
