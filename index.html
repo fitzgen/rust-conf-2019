@@ -11,9 +11,9 @@
      :root {
          --bg-black: hsl(240, 5%, 12.5%);
 
-         --fg-white: hsl(0, 0%, 85%);
+         --fg-white: hsl(0, 0%, 90%);
          --fg-pink: hsl(320, 100%, 85%);
-         --fg-blue: hsl(190, 90%, 85%);
+         --fg-blue: hsl(190, 100%, 75%);
          --fg-green: hsl(150, 90%, 85%);
          --fg-purple: hsl(290, 90%, 85%);
          --fg-yellow: hsl(60, 90%, 85%);
@@ -125,6 +125,10 @@
          max-width: 50%;
      }
 
+     .remark-slide .height-50 {
+         max-height: 50%;
+     }
+
      .invert-90 {
          filter: invert(90%);
      }
@@ -166,6 +170,13 @@
      .strike {
          text-decoration: line-through;
          opacity: 0.75;
+     }
+
+     .remark-slide img.center {
+         position: relative;
+         left: 50%;
+         transform: translate(-50%, 0%);
+         max-width: 100%;
      }
     </style>
   </head>

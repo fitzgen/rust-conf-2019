@@ -1,0 +1,8 @@
+<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+  <polyline points="100,10 190,100 180,125 100,10"
+            stroke="black"
+            fill="hsla(190, 90%, 10%, 0.85)"/>
+  <polyline points="10,15 190,60 100,120 25,110 10,15"
+            stroke="black"
+            fill="hsla(60, 90%, 10%, 0.85)"/>
+</svg>

@@ -19,6 +19,7 @@ class: left, middle
 
 * hi, I'm Nick Fitzgerald
 * thanks for coming to my talk about algorithmic art and Rust
+* before art+Rust, share journey of how got here
 
 ---
 
@@ -176,9 +177,20 @@ class: middle, center
 
 ---
 
-<img class="centermiddle invert-90" src="images/bitmap-vs-svg.svg" />
+<img class="center invert-90" style="max-height: 30vh" src="images/bitmap-vs-svg.svg" />
 
 .headnote[Source: [Wikipedia](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics#/media/File:Bitmap_VS_SVG.svg)]
+
+```svg
+<svg viewBox="0 0 70 70"
+     xmlns="http://www.w3.org/2000/svg">
+  <path d="M10,10 L60,20 L25,60 z"
+        fill="pink"
+        stroke="blue"
+        stroke-width="3"/>
+</svg>
+```
+
 
 ???
 
@@ -205,7 +217,7 @@ let data = element::path::Data::new()
     .close();
 
 let path = element::Path::new()
-    .set("fill", "none")
+    .set("fill", "pink")
     .set("stroke", "blue")
     .set("stroke-width", 3)
     .set("d", data);
@@ -222,12 +234,14 @@ svg::save("triangle.svg", &document)?;
 ???
 
 * don't want: plot existing SVG
-    * want: generate my own SVGs w/ Rust
+    * want: generate my own SVGs w/ Rust!
+    * this code generated SVG on prev slide
 * `svg` crate:
     * builder-style API
     * can get surprisingly far w/ just this crate
 * this example = triangle
     * _data_ = sequence of strokes in coordinate space
+        * ultimately controls pen movement
     * _path element_ = styles for strokes
     * _document_ = whole SVG image and box in coordinate space to render
 
@@ -246,31 +260,19 @@ svg::save("triangle.svg", &document)?;
 
 ---
 
-<pre><code class="svg">&lt;svg viewBox="0 0 70 70"
-     xmlns="http://www.w3.org/2000/svg">
-  &lt;path d="M10,10 L60,20 L25,60 z"
-        fill="none"
-        stroke="blue"
-        stroke-width="3"/>
-&lt;/svg>
-</code></pre>
-
 <div class="hbox">
   <img class="flex-1" alt="Software rendering of triangle.svg" src="images/triangle.svg"/>
-  <span class="flex-1">TODO: plot triangle.svg</div>
+  <span class="flex-1">TODO: plot triangle.svg</span>
 </div>
 
 ???
 
 * here is result!
-* top:
-    * SVG source text for `triangle.svg`
-    * proper amount of pointy brackets
-* bottom left:
+* left:
     * software rendering of `triangle.svg`
-* bottom right:
+* right:
     * photograph of `triangle.svg` drawn by pen plotter w/ TODO pen/marker
-* we said "thick, blue lines"
+* we said "thick, blue lines + fill pink"
     * software renderer drew them
     * pen plotter can't
         * just moves pen along paths
@@ -299,6 +301,20 @@ trait Rectangle {
         * where 0 ~= empty
         * and 1 ~= completely filled
 * how many impls of this trait?
+    * take look at few results
+
+---
+
+<img class="invert-90" alt="Rectangle 8" src="images/rectangle-8.svg"/>
+
+???
+
+* *Rectangle 8*
+* darkness values = 0.1, 0.5, 0.9
+* algorithm:
+    * moves distance d along rectangle's outer edges
+    * draw lines between points --> creates new quadrilateral
+    * continue recursively
 
 ---
 
@@ -307,7 +323,6 @@ trait Rectangle {
 ???
 
 * *Rectangle 2*
-* darkness values = 0.1, 0.5, 0.9
 * algorithm:
     * choose random point in rectangle
     * draw boxes out from that point, at uniform distances, until rectangle filled
@@ -326,17 +341,6 @@ exclude: true
     * similar to rectangle 2, except start in middle
 * boxes closer to the middle = more rounded
 * boxes further from middle = less rounded
-
----
-
-<img class="invert-90" alt="Rectangle 8" src="images/rectangle-8.svg"/>
-
-???
-
-* *Rectangle 8*
-    * choose points at distance d along rectangle's outer edges
-    * draw lines between points --> creates new quadrilateral
-    * continue recursively
 
 ---
 
@@ -419,7 +423,9 @@ trait Tiling {
     * fill rectangle?
     * draw custom brush stroke along given path?
     * visualize Perlin noise?
-    * create some kind of random walker?
+        * generates smooth gradients instead of pure random
+    * different kinds of random walker?
+        * move randomly thru coordinate space in interesting ways
 * next: how many ways can I combine them?
     * tile rectangles + assign darkness values?
     * draw random walker's paths with custom brush strokes?
@@ -445,9 +451,16 @@ trait Tiling {
 
 ---
 
-<img class="centermiddle invert-90"
-     alt="Line segments intersecting and one shape occluding another"
-     src="images/line-intersection-and-occlusion.svg" />
+<div class="vbox centermiddle" style="width: 65%">
+  <div class="hbox flex-1">
+    <img class="small-padding flex-1" alt="Software rendering of triangle.svg" src="images/triangle.svg"/>
+    <div class="small-padding flex-1">TODO: plot triangle.svg</div>
+  </div>
+  <div class="hbox flex-1">
+    <img class="invert-90 small-padding flex-1" alt="Software rendering of cross-hatch.svg" src="images/cross-hatch.svg"/>
+    <div class="small-padding flex-1">TODO: plot cross-hatch.svg</div>
+  </div>
+</div>
 
 ???
 
@@ -455,22 +468,34 @@ trait Tiling {
     * plotters don't support all SVG features that software renderers do
 * software renderers:
     * fill in shapes with colors or gradients
-        * w/ plotter: need to create cross-hatch pattern
-    * draw elements in order
-        * later elements can occlude earlier elements
-        * w/ plotter:
-            * draw first element
-            * then draw second element,
-            * result = elements drawn on top of each other
-        * if want occlusion:
-            * only generate paths that aren't covered
-* stop line when it hits another line?
+* w/ plotter:
+    * need to create cross-hatch pattern
+
+---
+
+<div class="vbox centermiddle" style="width: 65%">
+  <div class="hbox flex-1">
+    <img class="invert-90 small-padding flex-1" alt="Software rendering " src="images/bad-occlusion.svg"/>
+    <div class="small-padding flex-1">TODO: plot bad-occlusion.svg</div>
+  </div>
+  <div class="hbox flex-1">
+    <img class="invert-90 small-padding flex-1" alt="Software rendering of cross-hatch.svg" src="images/good-occlusion.svg"/>
+    <div class="small-padding flex-1">TODO: plot good-occlusion.svg</div>
+  </div>
+</div>
+
+???
+
+* software renderers draw elements in order
+    * later elements can occlude earlier elements
+    * w/ plotter:
+        * draw first element
+        * then draw second element,
+        * result = elements drawn on top of each other
+    * if want occlusion:
+        * only generate paths that aren't covered
 * running into these problems?
     * consider library / framework
-
-*(TODO: maybe this slide and the intro to fart on the next slides are too much
-of a non-sequitor? Should I move the intro to fart to the
-speeding-up-the-feedback-loop part?)*
 
 ---
 
@@ -680,11 +705,18 @@ class: middle, center
     * and then I look at the new SVGs generated by my program
     * tweak the program again
     * etc... until I'm happy with the output and decide to plot it
-* this feedback loop is too slow and involves a lot of manual work on my part:
+
+---
+
+## Edit <br/> Compile <br/> Run <br/> Alt-Tab to Firefox <br/> Refresh <br/> Alt-Tab back to Emacs <br/> Repeat
+
+???
+
+* feedback loop is too slow + involves manual work:
     * edit the sources
     * compile the program
-    * if there are no compilation errors, then I run the program
-    * if it runs OK, then I alt-tab to Firefox
+    * if no compilation errors --> run the program
+    * if runs OK --> alt-tab to Firefox
     * refresh to see the newest SVG
     * alt-tab back to Emacs
     * repeat
@@ -732,7 +764,7 @@ class: center
 
 ## Types of Changes
 
-<img alt="Graph of types of changes" src="images/types-of-changes.svg"/>
+<img class="invert-90" alt="Graph of types of changes" src="images/types-of-changes.svg"/>
 
 ???
 

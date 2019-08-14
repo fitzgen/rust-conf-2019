@@ -1,0 +1,12 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="cross-hatch"
+             width="10"
+             height="10"
+             patternTransform="rotate(60 0 0)"
+             patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="black" stroke-width="5"/>
+    </pattern>
+  </defs>
+  <rect fill="url(#cross-hatch)" x="10" y="10" stroke="black" width="380" height="280" stroke-width="3"/>
+</svg>
