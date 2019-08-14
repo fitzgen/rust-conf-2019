@@ -506,3 +506,50 @@ from what you did the first time
 *** can copy or use constraints for learning professional programming things
 ** shorten tiling -- maybe even skip
 *** more on the tooling side
+* feedback from mythmon and amy:
+** mythmon: during intro w/ pottery, seemed like it took a while
+*** maybe intro with a little contxt where its going "here's how I ended up making gnerative art with rust"
+** amy: liked emergence and work/life boundary
+*** lack of undo and version control -- make connection with saving images automatically
+*** liked emergent and tangible
+**** can choose to show something that is usually invisible
+**** which snapshots in time
+**** mythmon: yeah why is this interesting vs printer
+** mythmon: I like the rust logo gif
+*** maybe consider stabilizing this gif
+** motivation for pen plotter came through well
+** liked "pointy brackets"
+*** talk of xml/html seems hollow without example code to look at
+** first svg building slide:
+*** be more clear that "data" var is controlling the robot arm
+*** give triangle.svg a fill or gradient?
+** saxi seemed a little bit into the weeds
+*** if I need to take something out, this would be a good candidate
+** rectangles:
+*** mythmon: could use more of an intro: "here are results of implementations of this trait"
+*** "tiling 3 of rectangle 2" -- these numbers aren't useful to audience
+*** were consistent about explaining darkness values
+*** swap orer of first rectangles because of darknesses
+** constraint/creativity
+*** a lot of jargon
+*** what is perlin noise
+*** what is a random walker
+** limitations of plotters
+*** not clear which youre talking about at each time
+*** one slide per point? highlight which I'm talking about?
+*** show plotted and software together
+** fitzgen's art -> fart
+*** more straight-faced the better the joke will be
+** voronoi stuff is fun
+** enjoyed journey of crystals
+*** liked seeing code and then images
+** rectangles could use some spicing up
+** for types of changes:
+*** mention how long the compile times are / how long it takes to get feedback
+*** labels text should be larger on graph
+** for color crystal
+*** mention multiple pens dawn in layers one at a time and switched out
+** add gif of every image over project
+** blue highlight color too subtle in "too slow"
+** critical path should show up earlier, not crossed out
+*** this would make the crossed out version more impactful
