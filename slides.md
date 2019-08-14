@@ -7,7 +7,7 @@ name: normal
 layout: true
 class: left, middle
 
-.footnote[[https://fitzgen.github.io/rust-conf-2019](https://fitzgen.github.io/rust-conf-2019)]
+.footnote[[fitzgen.github.io/rust-conf-2019](https://fitzgen.github.io/rust-conf-2019)]
 
 ---
 
