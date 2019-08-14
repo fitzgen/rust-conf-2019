@@ -186,7 +186,7 @@ class: middle, center
     * <u>S</u>calable <u>V</u>ector <u>G</u>raphics
 * no pixels; shapes and paths
 * shapes/paths described w/in abstract coordinate space
-* pen plotter _scalse_ coordinate space up / down --> size of paper
+* pen plotter _scales_ coordinate space up / down --> size of paper
     * draws scaled shapes/paths/lines
 * ask: know HTML / XML?
     * raise hands -- awesome!
@@ -841,7 +841,7 @@ fart::user_const! {
     * copy something to learn more about it, or to cross pollinate ideas from
       another field
     * analyze your feedback loop and iteration times, gather empirical evidence,
-      treat it as a profiling and optimization problem and buil custom tooling
+      treat it as a profiling and optimization problem and build custom tooling
       to boost your productivity
 
 ---
