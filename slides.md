@@ -316,6 +316,8 @@ trait Rectangle {
 
 ---
 
+exclude: true
+
 <img class="invert-90" alt="Rectangle 6" src="images/rectangle-6.svg"/>
 
 ???
@@ -534,10 +536,9 @@ speeding-up-the-feedback-loop part?)*
 
 ???
 
-* which makes a lot of sense, since you can create a voronoi diagram by flood
-  filling outwards from each of the seeds at the same time
-* which is intuitively similar to how a crystal grows outward until it runs into
-  another crystal
+* makes sense:
+    * can create Voronoi diagram w/ flood fill
+    * intuitively similar to crystal growth
 
 ---
 
@@ -552,13 +553,14 @@ for _ in 0..M {
 
 ???
 
-* we can use our understanding of voronoi diagrams to help create a Rust program
-  for generating crystal-inspired art
-* initially, we choose `N` random points to be our seeds
-* and then we choose `M` random points and for each one, draw a line to its
-  closest seed
-* these lines should give the "exploding" aesthetic that the original crystal
-  photo has
+* understanding of Voronoi diagrams --> create algorithm for crystal-inspired
+  art
+* choose `N` random points for seeds
+* choose many `M` random points:
+    * for each one
+        * find closest seed
+        * draw line to it
+* lines create "exploding fireworks" aesthetic
 
 ---
 
@@ -567,11 +569,13 @@ for _ in 0..M {
 
 ???
 
-* this simple algorithm works pretty well!
-    * here it is plotted on black paper with white gel pen
-    * I can definitely see the resemblence to the crystals
-* only difference this has from the algorithm that was just presented is that
-  the lines only go part of the way to the seed, so that it isn't too crowded
+* simple algorithm works pretty well!
+    * here: plotted on black paper w/ white gel pen
+    * can see resemblance to crystals
+        * zones
+        * fireworks
+* difference from algorithm just presented:
+    * lines only go part way to seed
 
 ---
 
@@ -582,12 +586,12 @@ for _ in 0..M {
 
 ???
 
-* I also played with giving each seed a randomized "gravity" level so that we
-  get some more variation in crystal sizes
-    * this wasn't really what I intended but I think it came out kind of cool
-* and I'm also trying to re-create the crystal's rainbow pinwheel effect, but in
-  black-and-white, via changing the length of the lines based on the angle from
-  the seed
+* played w/ giving seeds randomized "gravity" level
+    * intention: variation in crystal sizes
+    * happy little accident; more like comics explosion
+* also, pinwheel effect:
+    * via length of lines
+    * based on angle of line to seed
 
 ---
 
@@ -595,7 +599,8 @@ for _ in 0..M {
 
 ???
 
-* here is another variation, this time only choosing points within a circle
+* another variation:
+    * only choosing points within a circle
 
 ---
 
@@ -603,8 +608,8 @@ for _ in 0..M {
 
 ???
 
-* this final variation uses multiple colors directly for the pinwheel effect,
-  instead of line length
+* final variation
+    *  uses colors for pinwheel effect
 
 ---
 
