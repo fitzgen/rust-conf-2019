@@ -720,6 +720,8 @@ class: middle, center
     * refresh to see the newest SVG
     * alt-tab back to Emacs
     * repeat
+* no timing data
+    * estimate 3-4 seconds
 
 ---
 
@@ -793,6 +795,24 @@ fart::user_const! {
     * they let me tweak constant values in between runs of the program without
       recompiling it
     * you might know them by the name "environment variables"
+
+---
+
+<pre><code class="text remark-code"><span class="purple">$ fart serve</span>
+Serving on <span class="yellow">http://localhost:9090</span>
+</code></pre>
+
+???
+
+* TODO FITZGEN
+
+---
+
+<img class="centermiddle" alt="The fart local server and UI in action" src="images/fart-web-ui.png"/>
+
+???
+
+* TODO FITZGEN
 
 ---
 
