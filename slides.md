@@ -241,10 +241,13 @@ svg::save("triangle.svg", &document)?;
 * `svg` crate:
     * builder-style API
     * can get surprisingly far w/ just this crate
-* this example = triangle
+* this is code to generate SVG on prev slide
+    * draws triangle
     * _data_ = sequence of strokes in coordinate space
         * ultimately controls pen movement
     * _path element_ = styles for strokes
+        * lines: thick + blue
+        * filled in pink
     * _document_ = whole SVG image and box in coordinate space to render
 
 ---
