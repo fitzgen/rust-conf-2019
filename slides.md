@@ -40,8 +40,8 @@ class: left, middle
 * in my spare time?
     * side projects in Rust for fun
     * but: semi related to work --> become part of work
-    * king midas of work
 * realized: just working all the time
+    * King Midas, but work
 * not a recipe for a well-rounded life
 
 ---
@@ -63,13 +63,14 @@ class: left, middle
 
 <img alt="Stone with copper and a glazed mug with copper sand" src="images/bluepotter.jpg" class="centermiddle"/>
 
-.headnote[Source: [Matt Fiske Ceramics](https://www.instagram.com/p/BPJEw4nhqfU/)]
+.headnote[Source: [Matt Fiske Ceramics](https://www.instagram.com/p/BPJEw4nhqfU/) &mdash; [<img class="logo invert-90" src="images/instagram-logo.svg"/> bluepotter](https://www.instagram.com/bluepotter/)]
 
 ???
 
 * every facet has so much depth
     * love throwing? --> long/skinny/fragile vases
-    * or make glaze from scratch, like this image
+    * or make glaze from scratch
+        * like Matt Fiske did for this image
 
 ---
 
@@ -100,7 +101,7 @@ class: left, middle
 
 <img alt="Process 13 (A) by Casey Reas, 2010" src="images/casey-reas-process-13.jpg" class="centermiddle"/>
 
-.headnote[Source: [*Process 13 (A)* by Casey Reas, 2010](http://reas.com/p13_s/)]
+.headnote[Source: [*Process 13 (A)* by Casey Reas, 2010](http://reas.com/p13_s/) &mdash; [<img class="logo" src="images/twitter-logo.svg"/> REAS](https://twitter.com/reas)]
 
 ???
 
@@ -136,7 +137,7 @@ class: left, middle
 
 ---
 
-.headnote[Source: [*Entropy Variation* by Paul Rickards, 2019](https://twitter.com/paulrickards/status/1133489029515751425)]
+.headnote[Source: [*Entropy Variation* by Paul Rickards, 2019](https://twitter.com/paulrickards/status/1133489029515751425) &mdash; [<img class="logo" src="images/twitter-logo.svg"/> paulrickards](https://twitter.com/paulrickards/)]
 
 <div class="hbox">
   <img class="flex-1 small-padding" alt="Entropy Variation by Paul Rickards, 2019" src="images/paul-rickards-entropy-variation.jpeg"/>
@@ -158,10 +159,11 @@ class: left, middle
         * move the pen slower --> more bleeding
     * colors combine
         * blue on yellow --> unique green
+    * get same element of surprise as w/ glaze
     * this piece by Paul Rickards
         * takes advantage of medium superbly
         * rectangles overlap / colors combine --> transparency / depth
-* _this_ = what was missing
+* _this physicality_ = what was missing
 * decision:
     * make algorithmic art
     * bring into physical world w/ pen plotter
@@ -238,12 +240,11 @@ svg::save("triangle.svg", &document)?;
 
 * don't want: plot existing SVG
     * want: generate my own SVGs w/ Rust!
-    * this code generated SVG on prev slide
+    * this code generated SVG text on prev slide
 * `svg` crate:
     * builder-style API
     * can get surprisingly far w/ just this crate
-* this is code to generate SVG on prev slide
-    * draws triangle
+* draws triangle
     * _data_ = sequence of strokes in coordinate space
         * ultimately controls pen movement
     * _path element_ = styles for strokes
@@ -400,6 +401,7 @@ trait Tiling {
     * stained glass
     * maybe water ripples
     * _emergent_
+* favorite of tiling exercise --> decided to plot it
 
 ---
 
@@ -407,7 +409,9 @@ trait Tiling {
 
 ???
 
-* favorite of tiling exercise --> decided to plot it
+* here: same image, drawn by plotter
+    * black ballpoint pen on white paper
+    * `<pause>`
 * another surprise:
     * lines thicker --> much darker than anticipated
 * more ghostly
@@ -533,7 +537,7 @@ trait Tiling {
      alt="Aspirin Crystals by Carol Roullard"
      src="images/carol-roullard-aspirin-2019.png" />
 
-.headnote[Source: [*Aspirin Crystals* by Carol Roullard](https://mobile.twitter.com/CRoullardArt/status/1104782729017585664)]
+.headnote[Source: [*Aspirin Crystals* by Carol Roullard](https://mobile.twitter.com/CRoullardArt/status/1104782729017585664) &mdash; [<img class="logo" src="images/twitter-logo.svg"/> CRoullardArt](https://mobile.twitter.com/CRoullardArt/)]
 
 ???
 
@@ -655,7 +659,7 @@ exclude: true
      alt="Charoite by @micROCKScopica"
      src="images/micROCKScopica-charoite-2018.jpg" />
 
-.headnote[Source: [*Charoite* by @micROCKScopica](https://mobile.twitter.com/micROCKScopica/status/1142428535036006401)]
+.headnote[Source: [*Charoite* by @micROCKScopica](https://mobile.twitter.com/micROCKScopica/status/1142428535036006401)&mdash; [<img class="logo" src="images/twitter-logo.svg"/> micROCKScopica](https://mobile.twitter.com/micROCKScopica/)]
 
 ???
 
@@ -708,6 +712,9 @@ class: middle, center
     * "if it compiles, then it works"
         * not found way to encode aesthetic taste into something borrowck can
           enforce at compile time
+    * don't already have everything in head
+        * _searching_ for emergence / the unexpected / surprises
+        * fundamentally can't get it right first time
 * really happening is feedback loop:
     * look at SVGs
     * tweak program
