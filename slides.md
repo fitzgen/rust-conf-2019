@@ -40,6 +40,7 @@ class: left, middle
 * in my spare time?
     * side projects in Rust for fun
     * but: semi related to work --> become part of work
+    * king midas of work
 * realized: just working all the time
 * not a recipe for a well-rounded life
 
