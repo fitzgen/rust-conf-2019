@@ -1,12 +1,48 @@
-<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <pattern id="cross-hatch"
-             width="10"
-             height="10"
-             patternTransform="rotate(60 0 0)"
-             patternUnits="userSpaceOnUse">
-      <line x1="0" y1="0" x2="0" y2="10" stroke="black" stroke-width="5"/>
-    </pattern>
-  </defs>
-  <rect fill="url(#cross-hatch)" x="10" y="10" stroke="black" width="380" height="280" stroke-width="3"/>
+<svg height="6in" viewBox="0 0 400000 300000" width="8in" xmlns="http://www.w3.org/2000/svg">
+<path d="M390000,290000 L10000,290000 L10000,10000 L390000,10000 z" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,16632 L21487,9999" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M9999,27601 L40487,10000" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,38571 L59487,9999" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,49541 L78487,10000" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,60510 L97487,10000" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,71480 L116487,9999" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,82450 L135487,10000" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M9999,93419 L154487,10000" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M9999,104389 L173487,9999" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M9999,115358 L192487,10000" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M9999,126328 L211487,9999" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M9999,137298 L230487,10000" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M9999,148267 L249487,10000" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,159237 L268487,10000" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,170207 L287487,10000" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,181176 L306487,10000" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,192146 L325487,10000" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,203116 L344487,10000" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,214085 L363487,10000" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,225055 L382487,10000" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,236025 L390000,16632" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,246994 L390000,27601" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,257964 L390000,38571" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,268934 L390000,49541" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M10000,279903 L390000,60510" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M11512,290000 L389999,71480" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M30512,289999 L389999,82450" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M49512,290000 L390000,93419" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M68512,290000 L390000,104389" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M87512,290000 L390000,115358" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M106512,290000 L390000,126328" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M125512,290000 L389999,137298" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M144512,290000 L390000,148267" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M163512,290000 L390000,159237" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M182512,290000 L389999,170207" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M201512,290000 L389999,181176" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M220512,290000 L390000,192146" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M239512,290000 L390000,203116" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M258512,290000 L389999,214085" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M277512,290000 L389999,225055" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M296512,290000 L390000,236025" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M315512,290000 L390000,246994" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M334512,290000 L389999,257964" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M353512,290000 L390000,268934" fill="none" stroke="black" stroke-width="2000"/>
+<path d="M372512,290000 L390000,279903" fill="none" stroke="black" stroke-width="2000"/>
 </svg>

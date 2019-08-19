@@ -74,7 +74,7 @@ class: left, middle
 
 ---
 
-# TODO: image of my metallic green bowl
+<img class="centermiddle" alt="My pottery with shimmery glaze" src="images/shimmery-glaze-combo.jpeg"/>
 
 ???
 
@@ -269,7 +269,7 @@ svg::save("triangle.svg", &document)?;
 
 <div class="hbox">
   <img class="flex-1" alt="Software rendering of triangle.svg" src="images/triangle.svg"/>
-  <span class="flex-1">TODO: plot triangle.svg</span>
+  <img class="flex-1" alt="triangle.svg as drawn by a pen plotter" src="images/triangle-svg-plotted.jpeg"/>
 </div>
 
 ???
@@ -278,7 +278,8 @@ svg::save("triangle.svg", &document)?;
 * left:
     * software rendering of `triangle.svg`
 * right:
-    * photograph of `triangle.svg` drawn by pen plotter w/ TODO pen/marker
+    * photograph of `triangle.svg` drawn by pen plotter w/ gel pen on black
+      paper
 * we said "thick, blue lines + fill pink"
     * software renderer drew them
     * pen plotter can't
@@ -464,11 +465,11 @@ trait Tiling {
 <div class="vbox centermiddle" style="width: 65%">
   <div class="hbox flex-1">
     <img class="small-padding flex-1" alt="Software rendering of triangle.svg" src="images/triangle.svg"/>
-    <div class="small-padding flex-1">TODO: plot triangle.svg</div>
+    <img class="small-padding flex-1" alt="triangle.svg as drawn by a pen plotter" src="images/triangle-svg-plotted.jpeg"/>
   </div>
   <div class="hbox flex-1">
     <img class="invert-90 small-padding flex-1" alt="Software rendering of cross-hatch.svg" src="images/cross-hatch.svg"/>
-    <div class="small-padding flex-1">TODO: plot cross-hatch.svg</div>
+    <img class="small-padding flex-1" alt="cross-hatch.svg as drawn by a plotter" src="images/cross-hatch-plotted.jpeg"/>
   </div>
 </div>
 
