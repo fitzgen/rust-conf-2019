@@ -486,12 +486,12 @@ trait Tiling {
 
 <div class="vbox centermiddle" style="width: 65%">
   <div class="hbox flex-1">
-    <img class="invert-90 small-padding flex-1" alt="Software rendering " src="images/bad-occlusion.svg"/>
-    <div class="small-padding flex-1">TODO: plot bad-occlusion.svg</div>
+    <img class="invert-90 small-padding flex-1" alt="Software rendering of occlusion that won't work on plotter" src="images/bad-occlusion.svg"/>
+    <img class="small-padding flex-1" alt="Occlusion failing to work as drawn by a plotter" src="images/bad-occlusion-plotted.jpeg"/>
   </div>
   <div class="hbox flex-1">
-    <img class="invert-90 small-padding flex-1" alt="Software rendering of cross-hatch.svg" src="images/good-occlusion.svg"/>
-    <div class="small-padding flex-1">TODO: plot good-occlusion.svg</div>
+    <img class="invert-90 small-padding flex-1" alt="Software rendering of occlusion that will work on plotter" src="images/good-occlusion.svg"/>
+    <img class="small-padding flex-1" alt="Doing occlusion before generating paths will work on a plotter" src="images/good-occlusion-plotted.jpeg"/>
   </div>
 </div>
 
@@ -555,7 +555,7 @@ trait Tiling {
 
 <img class="centermiddle" alt="Voronoi Diagram" src="images/voronoi-diagram.svg"/>
 
-.headnote[Source: [Wikipedia](https://en.wikipedia.org/wiki/File:Euclidean_Voronoi_diagram.svg)]
+.headnote[Source: [Voronoi diagram &mdash; Wikipedia](https://en.wikipedia.org/wiki/File:Euclidean_Voronoi_diagram.svg)]
 
 ???
 
@@ -569,7 +569,7 @@ trait Tiling {
 
 <img class="centermiddle" alt="Animation of Voronoi growth" src="images/voronoi-growth.gif"/>
 
-.headnote[Source: [Wikipedia](ohttps://en.wikipedia.org/wiki/File:Voronoi_growth_euclidean.gif)]
+.headnote[Source: [Voronoi diagram &mdash; Wikipedia](https://en.wikipedia.org/wiki/File:Voronoi_growth_euclidean.gif)]
 
 ???
 
@@ -932,6 +932,7 @@ Serving on <span class="yellow">http://localhost:9090</span>
 
 * [*Computational Drawing*](http://lostritto.com/book) by Carl Lostritto
 * [*Computational Geometry in C*](http://cs.smith.edu/~jorourke/books/compgeom.html) by Joseph O'Rourke
+* [*On Fine Art and Generative Line Drawings*](https://www.tandfonline.com/doi/pdf/10.1080/17513470701441445) by H. Dehlinger
 * [*Executing Generative Art with a Plotter*](https://tylerxhobbs.com/essays/2018/executing-generative-art-with-a-plotter) by Tyler Hobbs
 * [*On Generative Algorithms*](https://inconvergent.net/generative) by Anders Hoff
 * [*The Nature of Code*](https://natureofcode.com/) by Daniel Shiffman
