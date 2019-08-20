@@ -208,6 +208,7 @@ class: middle, center
 * ask: know HTML / XML?
     * raise hands -- awesome!
     * like HTML / XML: SVG is text with pointy brackets
+        * as can see w/ snippet on bottom
     * everyone who raised hand = on the way to being a plotter artist :)
 
 ---
@@ -241,7 +242,7 @@ svg::save("triangle.svg", &document)?;
 * don't want: plot existing SVG
     * want: generate my own SVGs w/ Rust!
     * this code generated SVG text on prev slide
-* `svg` crate:
+* search crates.io for "svg" --> `svg` crate:
     * builder-style API
     * can get surprisingly far w/ just this crate
 * draws triangle
