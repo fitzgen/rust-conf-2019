@@ -106,8 +106,11 @@ https://www.dailywritingtips.com/how-to-structure-a-story-the-eight-point-arc/
 ** https://www.artnome.com/news/2018/8/8/why-love-generative-art
 * Task list:
 ** DONE make a bunch of art with pen plotter!
-** TODO make outline of talk/slides
-** TODO actually make polished slides
+** DONE make outline of talk/slides
+CLOSED: [2019-08-20 Tue 15:31]
+** DONE actually make polished slides
+CLOSED: [2019-08-20 Tue 15:31]
+** TODO make repo public
 * Corpus of art to entice folks with
 ** https://elartedigital.files.wordpress.com/2010/04/schotter-nees.jpg
 Georg Nees
