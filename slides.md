@@ -41,7 +41,6 @@ class: left, middle
     * side projects in Rust for fun
     * but: semi related to work --> become part of work
 * realized: just working all the time
-    * King Midas, but work
 * not a recipe for a well-rounded life
 
 ---
@@ -84,11 +83,11 @@ class: left, middle
         * after: glassy and colorful
     * combine glazes: mixing / layering
         * discovered: black on top of green, then
-          * metallic and shimmery; oil slick
-          * neither glaze alone had property
-          * combine --> something new/surprising _emerges_
-          * tried: recreate w/ five bowls
-          * only one survived
+            * metallic and shimmery; oil slick
+            * neither glaze alone had property
+            * combine --> something new/surprising _emerges_
+        * tried: recreate w/ five bowls
+            * only one survived
 * b/c pottery is difficult / requires patience
     * can break at every step
     * no undo / version control
@@ -149,7 +148,8 @@ class: left, middle
 
 ???
 
-* physical medium = more variables / emergence:
+* physical medium = more emergence:
+    * more variables
     * pen can't draw Euclidean lines w/ zero area
     * different pens
         * width
@@ -167,7 +167,7 @@ class: left, middle
 * decision:
     * make algorithmic art
     * bring into physical world w/ pen plotter
-* bought AxiDraw
+* bought AxiDraw, popular pen plotter
 
 ---
 
@@ -184,7 +184,7 @@ class: middle, center
 
 <img class="center invert-90" style="max-height: 30vh" src="images/bitmap-vs-svg.svg" />
 
-.headnote[Source: [Wikipedia](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics#/media/File:Bitmap_VS_SVG.svg)]
+.headnote[Source: [Scalable Vector Graphics &mdash; Wikipedia](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)]
 
 ```svg
 <svg viewBox="0 0 70 70"
@@ -269,7 +269,7 @@ svg::save("triangle.svg", &document)?;
 
 <div class="hbox">
   <img class="flex-1" alt="Software rendering of triangle.svg" src="images/triangle.svg"/>
-  <img class="flex-1" alt="triangle.svg as drawn by a pen plotter" src="images/triangle-svg-plotted.jpeg"/>
+  <img class="flex-1 small-padding" alt="triangle.svg as drawn by a pen plotter" src="images/triangle-svg-plotted.jpeg"/>
 </div>
 
 ???
@@ -410,8 +410,8 @@ trait Tiling {
 
 ???
 
-* here: same image, drawn by plotter
-    * black ballpoint pen on white paper
+* here: photo of same image, drawn by plotter
+    * w/ black ballpoint pen on white paper
     * `<pause>`
 * another surprise:
     * lines thicker --> much darker than anticipated
@@ -429,7 +429,6 @@ trait Tiling {
 
 * hardest part of starting = blank canvas
     * side step w/ constraints + exercise
-* write list first, code after?
 * how many ways can I...
     * fill rectangle?
     * draw custom brush stroke along given path?
@@ -638,6 +637,7 @@ for _ in 0..M {
 
 * another variation:
     * only choosing points within a circle
+    * contaminated petri dish
 
 ---
 
@@ -756,8 +756,7 @@ class: middle, center
     * how to solve this problem (and others)
 * file watcher --> auto recompile + rerun on change
 * if re-compiles OK && generates SVG OK then
-    * save `images/<timestamp>.svg`
-    * symlink `images/latest.svg`
+    * save image in repo
     * git commit everything: images + code
         * never lose any image
         * have snapshot of code that generated each image
