@@ -182,9 +182,20 @@ class: middle, center
 
 ---
 
-<img class="center invert-90" style="max-height: 30vh" src="images/bitmap-vs-svg.svg" />
+<img class="centermiddle invert-90" style="max-height: 30vh" src="images/bitmap-vs-svg.svg" />
 
 .headnote[Source: [Scalable Vector Graphics &mdash; Wikipedia](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)]
+
+???
+
+* easiest way = SVG
+    * <u>S</u>calable <u>V</u>ector <u>G</u>raphics
+* no pixels; shapes and paths
+* shapes/paths described w/in abstract coordinate space
+* pen plotter _scales_ coordinate space up / down --> size of paper
+    * draws scaled shapes/paths/lines
+
+---
 
 ```svg
 <svg viewBox="0 0 70 70"
@@ -196,20 +207,13 @@ class: middle, center
 </svg>
 ```
 
-
 ???
 
-* easiest way = SVG
-    * <u>S</u>calable <u>V</u>ector <u>G</u>raphics
-* no pixels; shapes and paths
-* shapes/paths described w/in abstract coordinate space
-* pen plotter _scales_ coordinate space up / down --> size of paper
-    * draws scaled shapes/paths/lines
 * ask: know HTML / XML?
     * raise hands -- awesome!
     * like HTML / XML: SVG is text with pointy brackets
-        * as can see w/ snippet on bottom
-    * everyone who raised hand = on the way to being a plotter artist :)
+        * as can see w/ snippet
+    * everyone who raised hand = on the way to being a generative artist :)
 
 ---
 
@@ -268,9 +272,17 @@ svg::save("triangle.svg", &document)?;
 
 ---
 
-<div class="hbox">
-  <img class="flex-1" alt="Software rendering of triangle.svg" src="images/triangle.svg"/>
-  <img class="flex-1 small-padding" alt="triangle.svg as drawn by a pen plotter" src="images/triangle-svg-plotted.jpeg"/>
+class: center
+
+<div class="hbox flex-1">
+  <div class="small-padding flex-1">
+    <h5>Software Rendering</h5>
+    <img alt="Software rendering of triangle.svg" src="images/triangle.svg"/>
+  </div>
+  <div class="small-padding flex-1">
+    <h5>Plotter Drawing</h5>
+    <img alt="triangle.svg as drawn by a pen plotter" src="images/triangle-svg-plotted.jpeg"/>
+  </div>
 </div>
 
 ???
@@ -377,8 +389,19 @@ trait Tiling {
 
 ---
 
-<img class="invert-90 centermiddle" alt="Tiling 0 of Rectangle 10" src="images/tiling-0-rectangle-10.png"/>
-<!-- <img class="invert-90 centermiddle" alt="Tiling 0 of Rectangle 10" src="images/tiling-0-rectangle-10.svg"/> -->
+class: center
+
+<div class="hbox">
+  <div class="medium-padding flex-1 vbox">
+    <!-- <h5>Rectangle 10</h5> -->
+    <div class="flex-1"><img class="invert-90" alt="Rectangle 10" src="images/rectangle-10.png"/></div>
+  </div>
+  <div class="medium-padding flex-4 vbox">
+    <!-- <h5>Tiling 0 of Rectangle 10</h5> -->
+    <img class="invert-90 flex-1" alt="Tiling 0 of Rectangle 10" src="images/tiling-0-rectangle-10.png"/>
+    <!-- <img class="invert-90" alt="Tiling 3 of Rectangle 2" src="images/tiling-0-rectangle-10.svg"/> -->
+  </div>
+</div>
 
 ???
 
@@ -390,8 +413,19 @@ trait Tiling {
 
 ---
 
-<img class="invert-90 centermiddle" alt="Tiling 3 of Rectangle 2" src="images/tiling-3-rectangle-2.png"/>
-<!-- <img class="invert-90 centermiddle" alt="Tiling 3 of Rectangle 2" src="images/tiling-3-rectangle-2.svg"/> -->
+class: center
+
+<div class="hbox">
+  <div class="medium-padding flex-1 vbox">
+    <!-- <h5>Rectangle 2</h5> -->
+    <div class="flex-1"><img class="invert-90" alt="Rectangle 2" src="images/rectangle-2-rotated-90.svg"/></div>
+  </div>
+  <div class="medium-padding flex-4 vbox">
+    <!-- <h5>Tiling 3 of Rectangle 2</h5> -->
+    <img class="invert-90 flex-1" alt="Tiling 3 of Rectangle 2" src="images/tiling-3-rectangle-2.png"/>
+    <!-- <img class="invert-90" alt="Tiling 3 of Rectangle 2" src="images/tiling-3-rectangle-2.svg"/> -->
+  </div>
+</div>
 
 ???
 
@@ -462,14 +496,16 @@ trait Tiling {
 
 ---
 
-<div class="vbox centermiddle" style="width: 65%">
-  <div class="hbox flex-1">
-    <img class="small-padding flex-1" alt="Software rendering of triangle.svg" src="images/triangle.svg"/>
-    <img class="small-padding flex-1" alt="triangle.svg as drawn by a pen plotter" src="images/triangle-svg-plotted.jpeg"/>
+class: center
+
+<div class="hbox flex-1">
+  <div class="small-padding flex-1">
+    <h5>Software Rendering</h5>
+    <img alt="Software rendering of triangle.svg" src="images/triangle.svg"/>
   </div>
-  <div class="hbox flex-1">
-    <img class="invert-90 small-padding flex-1" alt="Software rendering of cross-hatch.svg" src="images/cross-hatch.svg"/>
-    <img class="small-padding flex-1" alt="cross-hatch.svg as drawn by a plotter" src="images/cross-hatch-plotted.jpeg"/>
+  <div class="small-padding flex-1">
+    <h5>Plotter Drawing</h5>
+    <img alt="triangle.svg as drawn by a pen plotter" src="images/triangle-svg-plotted.jpeg"/>
   </div>
 </div>
 
@@ -479,19 +515,32 @@ trait Tiling {
     * plotters don't support all SVG features that software renderers do
 * software renderers:
     * fill in shapes with colors or gradients
-* w/ plotter:
-    * need to create cross-hatch pattern
+* plotter will only outline
 
 ---
 
-<div class="vbox centermiddle" style="width: 65%">
-  <div class="hbox flex-1">
-    <img class="invert-90 small-padding flex-1" alt="Software rendering of occlusion that won't work on plotter" src="images/bad-occlusion.svg"/>
-    <img class="small-padding flex-1" alt="Occlusion failing to work as drawn by a plotter" src="images/bad-occlusion-plotted.jpeg"/>
+class: center
+
+<img class="centermiddle" alt="cross-hatch.svg as drawn by a plotter" src="images/cross-hatch-plotted.jpeg"/>
+
+???
+
+* if want fill w/ plotter:
+    * need cross-hatch pattern
+    * or other fill described with strokes
+
+---
+
+class: center
+
+<div class="hbox flex-1">
+  <div class="small-padding flex-1">
+    <h5>Software Rendering</h5>
+    <img class="invert-90" alt="Software rendering of occlusion that won't work on plotter" src="images/bad-occlusion.svg"/>
   </div>
-  <div class="hbox flex-1">
-    <img class="invert-90 small-padding flex-1" alt="Software rendering of occlusion that will work on plotter" src="images/good-occlusion.svg"/>
-    <img class="small-padding flex-1" alt="Doing occlusion before generating paths will work on a plotter" src="images/good-occlusion-plotted.jpeg"/>
+  <div class="small-padding flex-1">
+    <h5>Plotter Drawing</h5>
+    <img alt="Occlusion failing to work as drawn by a plotter" src="images/bad-occlusion-plotted.jpeg"/>
   </div>
 </div>
 
@@ -499,12 +548,30 @@ trait Tiling {
 
 * software renderers draw elements in order
     * later elements can occlude earlier elements
-    * w/ plotter:
-        * draw first element
-        * then draw second element,
-        * result = elements drawn on top of each other
-    * if want occlusion:
-        * only generate paths that aren't covered
+* w/ plotter:
+    * also draw first element,
+    * then draw second element
+    * result = elements drawn on top of each other
+
+---
+
+class: center
+
+<div class="hbox flex-1">
+  <div class="small-padding flex-1">
+    <h5>Software Rendering</h5>
+    <img class="invert-90" alt="Software rendering of occlusion that works on plotter" src="images/good-occlusion.svg"/>
+  </div>
+  <div class="small-padding flex-1">
+    <h5>Plotter Drawing</h5>
+    <img alt="Doing occlusion before generating paths will work on a plotter" src="images/good-occlusion-plotted.jpeg"/>
+  </div>
+</div>
+
+???
+
+* if want occlusion w/ plotter:
+    * only generate paths that are _not_ covered
 * running into these problems?
     * consider library / framework
 
@@ -895,7 +962,7 @@ Serving on <span class="yellow">http://localhost:9090</span>
 
 # .yellow[Impose Constraints]
 # .purple[Copy Something]
-# .green[Make Your Own Tools]
+# .green[Customize Your Tools]
 
 ???
 
@@ -906,14 +973,13 @@ Serving on <span class="yellow">http://localhost:9090</span>
     * make problem smaller
     * easier to solve
     * break down into pieces
-    * deadline?
 * want to learn something?
     * copy it
     * cross pollinate by copying from another domain
 * want to boost efficiency?
-    * treat iteration time as profiling / optimization problem
-    * gather empirical evidence
-    * build custom tooling
+    * treat iteration time as optimization problem
+    * profile & gather empirical evidence
+    * customize your tools & build custom tooling
 
 ---
 
