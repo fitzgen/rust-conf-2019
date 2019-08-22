@@ -722,32 +722,6 @@ for _ in 0..M {
 
 ---
 
-exclude: true
-
-<img class="centermiddle"
-     alt="Charoite by @micROCKScopica"
-     src="images/micROCKScopica-charoite-2018.jpg" />
-
-.headnote[Source: [*Charoite* by @micROCKScopica](https://mobile.twitter.com/micROCKScopica/status/1142428535036006401)&mdash; [<img class="logo" src="images/twitter-logo.svg"/> micROCKScopica](https://mobile.twitter.com/micROCKScopica/)]
-
-???
-
-* TODO
-
----
-
-exclude: true
-
-<img class="centermiddle"
-     alt="A rock microscopy-inspired piece."
-     src="images/rox.jpeg" />
-
-???
-
-* TODO
-
----
-
 class: middle, center
 
 # .purple[Copy Something]
@@ -1006,9 +980,6 @@ Serving on <span class="yellow">http://localhost:9090</span>
 ???
 
 * few resources I've found helpful
-* probably missing a bunch
-    * won't fit
-    * forgot some
 * peruse on your own time
 
 ---
