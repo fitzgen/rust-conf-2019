@@ -69,7 +69,7 @@ class: left, middle
 * every facet has so much depth
     * love throwing? --> long/skinny/fragile vases
     * or make glaze from scratch
-        * like Matt Fiske did for this image
+        * like Matt Fiske did w/ this piece
 
 ---
 
