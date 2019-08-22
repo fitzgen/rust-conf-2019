@@ -304,7 +304,7 @@ class: center
 trait Rectangle {
     fn draw(
         &mut self,
-        rng: &mut impl Rng,
+        rng: &mut dyn Rng,
         x: f64,
         y: f64,
         width: f64,
@@ -368,14 +368,14 @@ exclude: true
 ```
 trait Tiling {
     fn new(
-        rng: &mut impl Rng,
+        rng: &mut dyn Rng,
         columns: usize,
         rows: usize,
     ) -> Self;
 
     fn get_value(
         &mut self,
-        rng: &mut impl Rng,
+        rng: &mut dyn Rng,
         x: usize,
         y: usize,
     ) -> f64;
