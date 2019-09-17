@@ -8,4 +8,6 @@
 My Rust Conf 2019 talk on making generative art with Rust and drawing it with a
 pen plotter.
 
+[**View the recording here!**](https://www.youtube.com/watch?v=Ho3xr4b60Zg)
+
 [**View the slides here!**](https://fitzgen.github.io/rust-conf-2019)
